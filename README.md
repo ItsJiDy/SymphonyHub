@@ -3,4 +3,5 @@
 Updated: January 7, 2023
 
 # Features Added:
-None
+[+] Haste
+[+] Voting Map
