@@ -3,15 +3,15 @@
 **Updated: January 13, 2023**
 
 ## Features Added:
-[+] Fixed Bug
-[+] Optimization
-[+] Less Lag
+**[+] Fixed Bug**
+**[+] Optimization**
+**[+] Less Lag**
 
 ## Supported Executor:
 ```lua
 Synapse X (PC)
-Fluxus (Mobile | PC)
-Hydrogen (Mobile | PC)
+Fluxus (Android | PC)
+Hydrogen (Android | PC)
 or more...
 ```
 
