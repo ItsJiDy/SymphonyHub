@@ -7,6 +7,14 @@
 [+] Optimization
 [+] Less Lag
 
+## Supported Executor:
+```lua
+Synapse X (PC)
+Fluxus (Mobile | PC)
+Hydrogen (Mobile | PC)
+or more...
+```
+
 ## Script:
 
 ```lua
