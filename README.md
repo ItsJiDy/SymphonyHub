@@ -1,6 +1,6 @@
 # SymphonyHub
 
-(Updated: January 13, 2023)
+**Updated: January 13, 2023**
 
 ## Features Added:
 [+] Fixed Bug
