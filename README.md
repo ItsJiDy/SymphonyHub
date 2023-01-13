@@ -1,7 +1,10 @@
 # SymphonyHub
 
-Updated: January 7, 2023
+(Updated: January 13, 2023)
 
 # Features Added:
-[+] Haste
-[+] Voting Map
+[+] Fixed Bug
+[+] Optimization
+[+] Less Lag
+
+//LUA loadstring(game:HttpGetAsync("
