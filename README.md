@@ -7,4 +7,6 @@
 [+] Optimization
 [+] Less Lag
 
-```lua loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Zoi8752/SymphonyHub/main/Script"))() ```
+```lua
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Zoi8752/SymphonyHub/main/Script"))()
+```
