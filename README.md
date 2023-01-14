@@ -1,12 +1,10 @@
 # SymphonyHub
 
-**Updated: January 13, 2023**
+**Updated: January 14, 2023**
 
 ## Features Added:
 ```lua
-[+] Fixed Bug
-[+] Optimization
-[+] Less Lag
+[+] Fixed Not Showing UI
 ```
 
 ## Supported Executor:
