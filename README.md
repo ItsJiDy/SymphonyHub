@@ -1,16 +1,17 @@
 # SymphonyHub
 
-**Updated: January 18, 2023**
+**Updated: January 21, 2023**
 
 ## Features Added:
 ```lua
 [+] Fixed Bug
-[+] Fixed WalkSpeed & JumpPower UI
+[+] Fixed Features Kill
 [+] Fixed Auto Farm
-[+] New UI Options
-[+] Added Key System
-[+] Added 2 Features
-[+] New Version 2.5 (Beta)
+[+] Added Features Tracker Everyone
+[+] Added Features Click Tp Tool
+[+] Added Features Spectate Gun Drop
+[+] Deleted Features Burt Roles Reason: Not Working
+[+] New Version 2.7 (Beta)
 ```
 
 ## Supported Executor:
