@@ -1,19 +1,17 @@
 # SymphonyHub
 
-```lua
-Updated: January 21, 2023
-```
+**Updated: January 21, 2023**
 
 ## Features Added:
 ```lua
 [+] Fixed Bug
-[+] Fixed Features Kill
+[+] Fixed Kill
 [+] Fixed Auto Farm
-[+] Added Features Tracker Everyone
-[+] Added Features Click Tp Tool
-[+] Added Features Spectate Gun Drop
-[+] Deleted Features Burt Roles Reason: Not Working
-[+] New Version 2.7 (Beta)
+[+] Fixed Grab Gun
+[+] Added Features Farm & Option Method
+[+] Added Crash Murderer
+[+] Added Some UI
+[+] New Version 2.8 (Beta)
 ```
 
 ## Supported Executor:
