@@ -4,14 +4,10 @@
 
 ## Features Added:
 ```lua
-[+] Fixed Bug
-[+] Fixed Kill
-[+] Fixed Auto Farm
-[+] Fixed Grab Gun
-[+] Added Features Farm & Option Method
-[+] Added Crash Murderer
-[+] Added Some UI
-[+] New Version 2.8 (Beta)
+[+] Fixed Everything
+[+] New Cool Design
+[+] Added Features Crash Player
+[+] New Version 2.9 (Beta)
 ```
 
 ## Supported Executor:
