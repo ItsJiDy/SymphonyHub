@@ -5,7 +5,7 @@
 ## Features Added:
 ```lua
 [+] Fixed Zen Emote
-[+] Fixed Crash Player
+[+] Fixed Crash Player/Murderer
 [+] Fixed ESP Gun Drop
 [+] Fixed Auto Grab Gun
 [+] Current Version 2.9 (Beta)
