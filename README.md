@@ -1,13 +1,14 @@
 # SymphonyHub
 
-**Updated: January 24, 2023**
+**Updated: January 28, 2023**
 
 ## Features Added:
 ```lua
-[+] Fixed Everything
-[+] New Cool Design
-[+] Added Features Crash Player
-[+] New Version 2.9 (Beta)
+[+] Fixed Zen Emote
+[+] Fixed Crash Player
+[+] Fixed ESP Gun Drop
+[+] Fixed Auto Grab Gun
+[+] Current Version 2.9 (Beta)
 ```
 
 ## Supported Executor:
