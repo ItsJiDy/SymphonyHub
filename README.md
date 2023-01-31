@@ -7,6 +7,10 @@
 [+] Fixed Bug
 [+] Current Version 2.9 (Beta)
 ```
+## Status
+```lua
+PATCHED
+```
 
 ## Supported Executor:
 ```lua
