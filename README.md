@@ -1,11 +1,15 @@
 # SymphonyHub
 
-**Updated: January 31, 2023**
+**Updated: February 2, 2023**
 
 ## Features Added:
 ```lua
 [+] Fixed Bug
-[+] Current Version 2.9 (Beta)
+[+] Update ESP Everyone
+[+] Update God Mode
+[+] Update Auto Farm
+[+] Update Auto Grab Gun
+[+] New Version 3.0 (Beta)
 ```
 ## Script Status
 ```lua
