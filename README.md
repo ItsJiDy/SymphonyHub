@@ -1,15 +1,20 @@
 # SymphonyHub
 
-**Updated: February 2, 2023**
+**Updated: February 10, 2023**
 
 ## Features Added:
 ```lua
 [+] Fixed Bug
-[+] Update ESP Everyone
-[+] Update God Mode
-[+] Update Auto Farm
-[+] Update Auto Grab Gun
-[+] New Version 3.0 (Beta)
+[+] Valentime Update
+[+] Rename Auto Farm to Farm Coin/Heart
+[+] Added Config for Farm
+[+] Update Crash Murderer
+[+] Update Crash Player
+[+] Update Voting Map
+[+] Update UI's
+[+] Farming Smooth Tweening & Safe Mode
+[+] Added Features Fly & Fly Speed
+[+] New Version 3.1 (Beta)
 ```
 ## Script Status
 ```lua
