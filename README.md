@@ -1,6 +1,6 @@
 # SymphonyHub
 
-**Updated: February 10, 2023**
+**Updated: February 12, 2023**
 
 ## Features Added:
 ```lua
