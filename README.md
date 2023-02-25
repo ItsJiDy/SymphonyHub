@@ -1,14 +1,27 @@
 # SymphonyHub
 
-**Updated: February 12, 2023**
+**Updated: February 25, 2023**
 
 ## Features Added:
 ```lua
 [+] Fixed Bug
-[+] Added Bring Murderer & Bring Player
-[+] Added Blurt Roles
-[+] Added Secret Keybind to be always Murderer/Sheriff
-[+] New Version 3.2 (Beta)
+[+] Improve UI
+[+] Added Framework
+[+] Update AutoFarm
+[+] Added FarmType Selection
+[+] Update Blurt Roles
+[+] Fix Full Suffix
+[+] Update Key System
+[+] Update ESP
+[+] Update Crash Murderer (Instant Crash)
+[+] Update God Mode
+[+] Added Button Open/Hide in Left|Top Side
+[+] Update Notify
+[+] Update Kill
+[+] Update Cham
+[+] Added More Config on Auto Farm
+[+] Valentine Update
+[+] New Version 3.3 (Beta)
 ```
 ## Script Status
 ```lua
@@ -18,7 +31,7 @@ WORKING
 ## Supported Executor:
 ```lua
 Synapse X (PC)
-Fluxus (Android | PC)
+Fluxus (Android | PC) (Recommended)
 Hydrogen (Android | PC)
 or more...
 ```
