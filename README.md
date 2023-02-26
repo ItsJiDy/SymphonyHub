@@ -1,27 +1,10 @@
 # SymphonyHub
 
-**Updated: February 25, 2023**
+**Updated: February 26, 2023**
 
 ## Features Added:
 ```lua
-[+] Fixed Bug
-[+] Improve UI
-[+] Added Framework
-[+] Update AutoFarm
-[+] Added FarmType Selection
-[+] Update Blurt Roles
-[+] Fix Full Suffix
-[+] Update Key System
-[+] Update ESP
-[+] Update Crash Murderer (Instant Crash)
-[+] Update God Mode
-[+] Added Button Open/Hide in Left|Top Side
-[+] Update Notify
-[+] Update Kill
-[+] Update Cham
-[+] Added More Config on Auto Farm
-[+] Valentine Update
-[+] New Version 3.3 (Beta)
+[+] Update UI Library (**EngoLib**)
 ```
 ## Script Status
 ```lua
