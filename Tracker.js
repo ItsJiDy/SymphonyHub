@@ -81,5 +81,5 @@ tracker.__index(TrackerPoser)
 table.insert(folder, {
     tracker, bind
 })
-
+ 
 return folder
