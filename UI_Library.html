@@ -249,7 +249,7 @@ function library:CreateMain(title, description, keycode)
         TabButton.BackgroundTransparency = 1.000
         TabButton.Size = UDim2.new(0, 121, 0, 26)
         TabButton.Font = Enum.Font.Gotham
-        TabButton.Text = name
+        TabButton.Text = "۞ " .. name
         TabButton.TextColor3 =  theme.DarkTextColor
         TabButton.TextSize = 14.000
         TabButton.TextWrapped = true
@@ -704,10 +704,10 @@ function library:CreateMain(title, description, keycode)
             Title_5.TextColor3 =  theme.TextColor
             Title_5.TextSize = 14.000
             Title_5.TextXAlignment = Enum.TextXAlignment.Left
-            Title_5.Text = text
+            Title_5.Text = "→ " .. text .. " ←"
 
             function library4:Update(textnew) 
-                Title_5.Text = textnew
+                Title_5.Text = "→ " .. newtext .. " ←"
             end
 
             local obj = {
