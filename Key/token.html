@@ -1,0 +1,96 @@
+
+<!doctype html>
+<html>
+<head>
+<title>Work.Ink - Token</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+                body {
+                    background: #f1f1f1;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+    
+                .popup {
+                    position: fixed;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background: white;
+                    border-radius: 5px;
+                    padding: 20px;
+                    width: 450px;
+                    text-align: center;
+                }
+    
+                .title {
+                    font-weight: 700;
+                    font-size: 20px;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    color:rgb(88, 88, 88);
+                    text-transform: uppercase;
+                }
+    
+                input {
+                    font-size: 16px;
+                    border: none;
+                    background: #eee;
+                    font-family: 'Courier New', Courier, monospace;
+                    padding: 5px;
+                    border-radius: 5px;
+                    width: calc(100% - 10px);
+                    text-align: center;
+                    text-overflow: ellipsis;
+                }
+    
+                .image {
+                    margin-bottom: 20px;
+                }
+    
+                button {
+                    font-size: 12px;
+                    border: none;
+                    background: #eee;
+                    text-transform: uppercase;
+                    padding: 6px;
+                    font-weight: 700;
+                    color:rgb(88, 88, 88);
+                    border-radius: 5px;
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 10px;
+                    cursor: pointer;
+                }
+    
+                button:hover {
+                    background: #ddd;
+                }
+            </style>
+</head>
+<body>
+<script>
+            if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+              window.location.href = "https://itsjidy.github.io/SymphonyHub/Key/404.html";
+            } 
+            </script>
+<div class="popup">
+<img class="image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAMAAAD04JH5AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAClFBMVEUAAAAavYIavYIgv4VKy5x72bel5c5z17McvoNAyJdv1rGg5MvQ8ub7/v3////y+/gjwIeA27rF7t/z/Pnw+/cqwot017NCyZgfv4XM8OPp+fNl06v3/ftTzaF/2rnh9u8iv4ai5M31/PpNzJ4evoTk9/Dr+fRaz6UowYpByJfY9OpHypto1K3+///Z9Or4/fvv+vZCyJgbvYLP8eU9x5VZz6TW8+g+x5a06ta669lYz6Qvw439/v7b9etVzqL2/PrJ7+KG3L2y6dVl0qtUzqJFyZpDyZnD7t5i0qlc0KbL8ONMy50uw42c48mV4MU4xpL8/v4twoxw1rHx+/cxxI942LWs59I5xpOI3b4mwIir59FGypodvoN82bfO8eSx6NQnwYnC7d4lwIg8x5W+7Ny16tdWzqOH3L2u6NN+2rjI7+GQ38KF3LzH7+GR38PA7d1n06yq5tDm+PH5/fxOzJ6z6dUswozB7d1Ly5192bjg9u6i5MwzxJBr1K76/fyY4ceX4ca769qO3sHt+vVd0Kd22LSE3Lzj9/Ck5c1IypuC27um5c5y1rLK8OJp1K3R8uZh0alSzaC97Ns0xZApwYqD27uN3sErwovT8uf0/Plt1a8hv4bl9/HX8+k2xZEww46v6NPX9Ok1xZEyxI/d9eyL3sC06dZ52LY6xpTo+PLE7t8/yJbf9u3c9eyj5c226teJ3b83xZKT4MTS8ua469io5s87x5Tu+vZQzZ+Z4ceW4cZTzqFj0qri9+9u1bDs+vWa4sje9e2e48qP38LN8eRJypvG7+CS4MRRzaDa9OuB27pPzJ9q1K5s1a9Xz6N62bbV8+hEyZmM3sDn+PJx1rKK3b932LXG7uCU4MVb0KWb4sl117TlrdgtAAAAAnRSTlMADH8lgRMAAAABYktHRA5vvTBPAAAAB3RJTUUH5ggREQ44f3l1UwAABo9JREFUeNrtm/1fFEUcx3UPFdEbSECv4wLBA1EEcVFAMEiNp8CnoAA9gc5S8gFFHsxLL9FKRJR8SCBUVEpMzSJBKU1Ne9Cs7Pnxn4m9vdudndmn2wfOV6+dX1y/853v5707M995OB0zxihGeTzK2AAUjj4RgDLWADAADAADwAAwAP7nAKagceMnBAggeGLIpMlmAEBoIADCnpgSDrwlwmuLnDpt1AAsTwK2WGlbVCiwPTVaANGQPoihLNNjqce4GaMDYI+HARJmJhKzZtPPoUmjAjAHcEtyylzfY+q8UQAg04BwSZivP8ACIFbSdQPIyFyYRRJEduwiUYCnSZ0AcnJHoj+TtTgcEluy9Nm8/OgCMwxQqNMXKJqLvetzxd66kmUswnKknVYAhWZU3hwCfesVvnFZYNcHYM5KVD93Acchkk4E8avQltoAPI+Nu1I055WVUmadMuELWPdb8XXnRcqepwtANKYfU457RVEVIXoAVGD6s8t43Cqpblq9Ji9/lkNbgLWYflUkn18YU1+tKUANNv9fcvI6rmMcXtYWAJ2Ar5j4HdczHhu07YJarv54u4Dfq4wLZy6qB1gXuzGV1d9ECrhVWpkUxUHUJA+Q2Tmbt1BdkbxW0KeOYdzKsWu3GiZuq98+R7B2RQMDUKETgGixbGV7qTEAAPYmaJWyaAzQ3Jgo5RK8GpomO7h1qgBMr+2sdY3kVwk38nV4nnKHgHKAXbuXVbmRd2rm138D1rft0gSA3APtgFpoW34VaOLLQnth/X1vIrUKAaZykq8H6S1qUajGCd6GPCdPdaLVygDs+2EAanWrWUI/r3YgruMYN3frAZ5QygCiuPnfVdvm8j0fDOZ4trNem3lDKQM4BIRLG+x4OJmxp1h4QykCCBLRBx2Q4zvQWn2EP5Y/AGQSvdUrThcDACVMg5lu1nqUUA1Q0wJAZj5xrFZUHsQzg2A9vFmKcKoFOE4fbgps8LRqfTeqrSWUA3DC1+CIjWOPVgnQ2YW9a3c76alyvAfdiHT0eBs0xnG9T9pVAZScwvTTVjC1PRt8vZ162msKCkX9m9UA9KZg+memww75Zz3G6nPevyeVov5HSRUAfe9j+h8g8Xo2nJ9ykLmGy4lA/dNXEcoBTrvQcHO3iY0Xoh87LE+OFHCVA1C+Hw1nDWIqHbi/fRL2vQ7VCLHKALiwHfucx7xVJbEfJlvPIB838iKmf9FJKAewYHnvVCddQ0bTI906E/a/dBnTPzqdUAGQhIb7KNtbs5MxXWHSL3kYm37gYxOhBiCxmxvO1eetOAKNtO5P6J1WcxMmD87YCVUAxB5OuJMDPjuSGi+3ftp0Fc5+rkHPH0MOQiVAmRse/9d85nwgWkqjLUTeIDDXBRNqAcirbNjrsxiz6KYA1NMD9VwfQagGWMqGhW/bg60i+tfDpITlAzjZNGAbhisWiwBskqsvA2A5E9XNvXskP/NVfH5j8ULOTam7VzOAoCFmsq28idSRdMpN8OShL2CAIdn64gBh7R1Q1FtY4+ChEfMO+m3hEdF9QRuAotvwW/XztHbc6er3TjNo/f8yS76+GMBAA6y/WSIQvQF1p929lSEx82UD3IP166QCfZWcUt//tUXKzR+AbyD9u6RUINIk5eEvgAnqgXq/vqpGAMOsfovwenZcPwD2Etx2TKg1WQe6vr1vl1RRBMBerN0Tauy4Qq8QmRU3M5RSCALYmaXd6hRoa8qEhqn5QY62AOxqK3CoIyqRzedGbQG+YwIL5LVI7BfibDmCsgEGmbgTeRv2nkX1rbL3ALIA2P7lPVOcxjbf5gXyFOUCWGY8fPjQc8XKN9XnY4eVhiJF+hL7ge+p0D/grfJuo/q2H5XpSwBkULEzMXMjdviIu6FQXwLgEhU8dwCxZuWi+uHD8tT8BXCmeMK7uDu8m25UP7RYtp5fAGS1V2A2NBMdj7Czf8QBvyTlA7A/tC2q93VDzk+QMn0Nuu9nFfpiADM4O+20vffvF7YvhCzbd5fdGdmIWecpU5YGmALEiu0XKvH1ntjUqUpfDGCLKIA/O1+FAOW/iuink/oDENeYw4b5KvpvVH7TSF88D1zyZtyYIKKn+AGsn9CjRMxvAGLadUrtvOeHQc6PFL9rpS91OF1TChr+ID2P8P6jSuEhwH8AYt0j3x0Hc1t3smmC/wcgxQBsoe6k4v78q1D+0V9jgL//+XeaQ2ZUXQB0KgaAAWAAGAAGgAHwWAEE/D+9GsUoASz/AbnfweV1LFhXAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIyLTA4LTE3VDE3OjE0OjU2KzAwOjAwUhsiCwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyMi0wOC0xN1QxNzoxNDo1NiswMDowMCNGmrcAAAAASUVORK5CYII=" height="64" />
+<div class="title">
+Your Key:
+</div>
+<input id="tokenfield" type="text" readonly value="" placeholder="Your token...">
+<button id="button" onclick="">Copy</button>
+<div style="font-size: 12px; opacity: 0.2; margin: 15px 10px 0 10px">Don't worry if you aren't asked for this token in a software. Your redirection will still be verified by your IP address.</div>
+<script>
+                  const token = "e";
+
+                  document.getElementById("tokenfield").value = token;
+                  document.getElementById("button").onclick = () => {
+                    document.getElementById("button").innerText = "Copied!";
+                    navigator.clipboard.writeText(token);
+                    setTimeout(function () { window.top.close() }, 3000);
+                  };
+                </script>
+</div>
+<script>(function(){var js = "window['__CF$cv$params']={r:'7b0dec4939d50437',m:'p91DqotfdBMZs4WuQeU3d2NXe0U.4J2_m40RcTPay4M-1680321604-0-ASgpvtTWgM1b75Sb0173UUL/k9Zhjn9Cjon5ZQjbWX9cKRe6KoXbgUv9fwvYXq5dlUX7V/4mafJobc283JB18bje2P9Cxo/NIMA/sB7A6IuwL6RG37HOyV2TnC31YEOv1w==',s:[0x13688fbcbc,0x12dbe59dae],u:'/cdn-cgi/challenge-platform/h/b'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/b/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
+</html>
