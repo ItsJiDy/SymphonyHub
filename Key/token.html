@@ -82,7 +82,7 @@ Your Key:
 <button id="button" onclick="">Copy</button>
 <div style="font-size: 12px; opacity: 0.2; margin: 15px 10px 0 10px">Don't worry if you aren't asked for this token in a software. Your redirection will still be verified by your IP address.</div>
 <script>
-                  const token = "e";
+                  const token = urlParams.get("value");
 
                   document.getElementById("tokenfield").value = token;
                   document.getElementById("button").onclick = () => {
