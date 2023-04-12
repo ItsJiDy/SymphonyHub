@@ -171,7 +171,7 @@ function library:CreateMain(title, description, keycode)
     Main.Parent = EngoUI
     Main.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Main.Position = UDim2.new(0.2, 0, 0.2, 0)
-    Main.Size = UDim2.new(0, 550, 0, 400)
+    Main.Size = UDim2.new(0, 500, 0, 350)
     Main.Active = true
     Main.Draggable = true
 
@@ -179,7 +179,7 @@ function library:CreateMain(title, description, keycode)
     UIGradient.Offset = Vector2.new(-0.25, 0)
     UIGradient.Parent = Main
 
-    UICorner.CornerRadius = UDim.new(0, 6)
+    UICorner.CornerRadius = UDim.new(0, 10)
     UICorner.Parent = Main
 
     Sidebar.Name = "Sidebar"
@@ -188,14 +188,14 @@ function library:CreateMain(title, description, keycode)
     Sidebar.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Sidebar.BackgroundTransparency = 1.000
     Sidebar.Position = UDim2.new(0.043636363, 0, 0.158690169, 0)
-    Sidebar.Size = UDim2.new(0, 93, 0, 314)
+    Sidebar.Size = UDim2.new(0, 120, 0, 280)
     Sidebar.CanvasSize = UDim2.new(0, 0, 0, 0)
     Sidebar.ScrollBarThickness = 0
     Sidebar.AutomaticCanvasSize = Enum.AutomaticSize.Y
 
     UIListLayout.Parent = Sidebar
     UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-    UIListLayout.Padding = UDim.new(0, 15)
+    UIListLayout.Padding = UDim.new(0, 1)
 
     Topbar.Name = "Topbar"
     Topbar.Parent = Main
@@ -219,7 +219,7 @@ function library:CreateMain(title, description, keycode)
     Title.Font = Enum.Font.GothamBold
     Title.Text = title
     Title.TextColor3 =  theme.TextColor
-    Title.TextSize = 18.000
+    Title.TextSize = 15.000
     Title.TextXAlignment = Enum.TextXAlignment.Left
 
     Description.Name = "Description"
@@ -242,19 +242,23 @@ function library:CreateMain(title, description, keycode)
 
         local UIListLayout_2 = Instance.new("UIListLayout") 
         local TabButton = Instance.new("TextButton")
+        local UICorner = Instance.new("UICorner")
         local Tab = Instance.new("ScrollingFrame")
 
         TabButton.Parent = Sidebar
-        TabButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-        TabButton.BackgroundTransparency = 1.000
-        TabButton.Size = UDim2.new(0, 121, 0, 26)
+        TabButton.BackgroundColor3 = theme.LightContrast
+        TabButton.BackgroundTransparency = 0
+        TabButton.Size = UDim2.new(0, 110, 0, 35)
         TabButton.Font = Enum.Font.Gotham
-        TabButton.Text = "۞ " .. name
+        TabButton.Text = " ۞ " .. name
         TabButton.TextColor3 =  theme.DarkTextColor
         TabButton.TextSize = 14.000
         TabButton.TextWrapped = true
         TabButton.TextXAlignment = Enum.TextXAlignment.Left
         TabButton.Name = name.."TabButton"
+
+        UICorner.CornerRadius = UDim.new(0, 10)
+        UICorner.Parent = TabButton
 
         Tab.Name = name.."Tab"
         Tab.Parent = Main
@@ -262,8 +266,8 @@ function library:CreateMain(title, description, keycode)
         Tab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         Tab.BackgroundTransparency = 1.000
         Tab.BorderSizePixel = 0
-        Tab.Position = UDim2.new(0.289090902, 0, 0.151133507, 0)
-        Tab.Size = UDim2.new(0, 375, 0, 309)
+        Tab.Position = UDim2.new(0.25, 0, 0.151133507, 0)
+        Tab.Size = UDim2.new(0, 375, 0, 280)
         Tab.CanvasSize = UDim2.new(0, 0, 0, 0)
         Tab.ScrollBarThickness = 0
         Tab.TopImage = ""
@@ -314,13 +318,13 @@ function library:CreateMain(title, description, keycode)
             Button.Parent = Tab
             Button.BackgroundColor3 = theme.LightContrast
             Button.BackgroundTransparency = 0
-            Button.Size = UDim2.new(0, 375, 0, 49)
+            Button.Size = UDim2.new(0, 350, 0, 30)
             Button.Font = Enum.Font.SourceSans
             Button.Text = ""
             Button.TextColor3 = Color3.fromRGB(0, 0, 0)
             Button.TextSize = 14.000
 
-            UICorner_2.CornerRadius = UDim.new(0, 6)
+            UICorner_2.CornerRadius = UDim.new(0, 10)
             UICorner_2.Parent = Button
 
             Title_2.Name = "Title"
@@ -372,13 +376,13 @@ function library:CreateMain(title, description, keycode)
             Toggle.Parent = Tab
             Toggle.BackgroundColor3 = theme.LightContrast
             Toggle.BackgroundTransparency = 0
-            Toggle.Size = UDim2.new(0, 375, 0, 49)
+            Toggle.Size = UDim2.new(0, 350, 0, 30)
             Toggle.Font = Enum.Font.SourceSans
             Toggle.Text = ""
             Toggle.TextColor3 = Color3.fromRGB(0, 0, 0)
             Toggle.TextSize = 14.000
 
-            UICorner_3.CornerRadius = UDim.new(0, 6)
+            UICorner_3.CornerRadius = UDim.new(0, 10)
             UICorner_3.Parent = Toggle
 
             Title_3.Name = "Title"
@@ -452,13 +456,13 @@ function library:CreateMain(title, description, keycode)
             Textbox.BackgroundColor3 = theme.LightContrast
             Textbox.BackgroundTransparency = 0
             Textbox.Position = UDim2.new(0, 0, 0.326860845, 0)
-            Textbox.Size = UDim2.new(0, 375, 0, 50)
+            Textbox.Size = UDim2.new(0, 350, 0, 30)
             Textbox.Font = Enum.Font.SourceSans
             Textbox.Text = ""
             Textbox.TextColor3 = Color3.fromRGB(0, 0, 0)
             Textbox.TextSize = 14.000
 
-            UICorner.CornerRadius = UDim.new(0, 6)
+            UICorner.CornerRadius = UDim.new(0, 10)
             UICorner.Parent = Textbox
 
             Icon.Name = "Icon"
@@ -540,14 +544,14 @@ function library:CreateMain(title, description, keycode)
             Slider.BackgroundColor3 = theme.LightContrast
             Slider.BackgroundTransparency = 0
             Slider.Position = UDim2.new(0, 0, 0.336569577, 0)
-            Slider.Size = UDim2.new(0, 375, 0, 50)
+            Slider.Size = UDim2.new(0, 350, 0, 30)
             Slider.Font = Enum.Font.SourceSans
             Slider.Text = ""
             Slider.TextColor3 = Color3.fromRGB(0, 0, 0)
             Slider.TextSize = 14.000
             Slider.AutoButtonColor = false
 
-            UICorner_4.CornerRadius = UDim.new(0, 6)
+            UICorner_4.CornerRadius = UDim.new(0, 10)
             UICorner_4.Parent = Slider
 
             Icon_3.Name = "Icon"
@@ -669,13 +673,13 @@ function library:CreateMain(title, description, keycode)
             Label.BackgroundColor3 = theme.LightContrast
             Label.BackgroundTransparency = 0
             Label.Position = UDim2.new(0, 0, 0.336569577, 0)
-            Label.Size = UDim2.new(0, 375, 0, 50)
+            Label.Size = UDim2.new(0, 350, 0, 30)
             Label.Font = Enum.Font.SourceSans
             Label.Text = ""
             Label.TextColor3 = Color3.fromRGB(0, 0, 0)
             Label.TextSize = 14.000
 
-            UICorner_7.CornerRadius = UDim.new(0, 6)
+            UICorner_7.CornerRadius = UDim.new(0, 10)
             UICorner_7.Parent = Label
 
             Icon_4.Name = "Icon"
@@ -730,15 +734,15 @@ function library:CreateMain(title, description, keycode)
             Label.Name = text.."Label"
             Label.Parent = Tab
             Label.BackgroundColor3 = theme.LightContrast
-            Label.BackgroundTransparency = 0
+            Label.BackgroundTransparency = 1.000
             Label.Position = UDim2.new(0, 0, 0.336569577, 0)
-            Label.Size = UDim2.new(0, 375, 0, 50)
+            Label.Size = UDim2.new(0, 375, 0, 20)
             Label.Font = Enum.Font.SourceSans
             Label.Text = ""
             Label.TextColor3 = Color3.fromRGB(0, 0, 0)
             Label.TextSize = 14.000
 
-            UICorner_7.CornerRadius = UDim.new(0, 6)
+            UICorner_7.CornerRadius = UDim.new(0, 10)
             UICorner_7.Parent = Label
 
             Title_5.Name = "Title"
@@ -747,15 +751,15 @@ function library:CreateMain(title, description, keycode)
             Title_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             Title_5.BackgroundTransparency = 1.000
             Title_5.Position = UDim2.new(0.05, 0, 0.5, 0)
-            Title_5.Size = UDim2.new(0, 325, 0, 20)
+            Title_5.Size = UDim2.new(0, 375, 0, 20)
             Title_5.Font = Enum.Font.GothamSemibold
             Title_5.TextColor3 =  theme.TextColor
             Title_5.TextSize = 14.000
-
-            Title_5.Text = "→ " .. text .. " ←"
+            Title_5.TextXAlignment = Enum.TextXAlignment.Left
+            Title_5.Text = text
 
             function library4:Update(textnew) 
-                Title_5.Text = "→ " .. textnew .. " ←"
+                Title_5.Text = textnew
             end
 
             local obj = {
@@ -789,13 +793,13 @@ function library:CreateMain(title, description, keycode)
             Keybind.BackgroundColor3 = theme.LightContrast
             Keybind.BackgroundTransparency = 0
             Keybind.Position = UDim2.new(0, 0, 0.336569577, 0)
-            Keybind.Size = UDim2.new(0, 375, 0, 50)
+            Keybind.Size = UDim2.new(0, 350, 0, 30)
             Keybind.Font = Enum.Font.SourceSans
             Keybind.Text = ""
             Keybind.TextColor3 = Color3.fromRGB(0, 0, 0)
             Keybind.TextSize = 14.000
 
-            UICorner_8.CornerRadius = UDim.new(0, 6)
+            UICorner_8.CornerRadius = UDim.new(0, 10)
             UICorner_8.Parent = Keybind
 
             Title_6.Name = "Title"
@@ -904,13 +908,13 @@ function library:CreateMain(title, description, keycode)
             Dropdown.BackgroundColor3 = theme.LightContrast
             Dropdown.BackgroundTransparency = 0
             Dropdown.Position = UDim2.new(0, 0, 0.158576056, 0)
-            Dropdown.Size = UDim2.new(0, 375, 0, 50)
+            Dropdown.Size = UDim2.new(0, 350, 0, 30)
             Dropdown.Font = Enum.Font.SourceSans
             Dropdown.Text = ""
             Dropdown.TextColor3 = Color3.fromRGB(0, 0, 0)
             Dropdown.TextSize = 14.000
 
-            UICorner_10.CornerRadius = UDim.new(0, 6)
+            UICorner_10.CornerRadius = UDim.new(0, 10)
             UICorner_10.Parent = Dropdown
 
             Title_7.Name = "Title"
@@ -962,7 +966,7 @@ function library:CreateMain(title, description, keycode)
                 Option.BackgroundColor3 = theme.LightContrast
                 Option.BackgroundTransparency = 0
                 Option.Position = UDim2.new(0, 0, 0.666666687, 0)
-                Option.Size = UDim2.new(0, 354, 0, 50)
+                Option.Size = UDim2.new(0, 350, 0, 30)
                 Option.Font = Enum.Font.SourceSans
                 Option.Text = ""
                 Option.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -1075,13 +1079,13 @@ function library:CreateMain(title, description, keycode)
             Textlist.BackgroundColor3 = theme.LightContrast
             Textlist.BackgroundTransparency = 0
             Textlist.Position = UDim2.new(0, 0, 0.158576056, 0)
-            Textlist.Size = UDim2.new(0, 375, 0, 50)
+            Textlist.Size = UDim2.new(0, 350, 0, 30)
             Textlist.Font = Enum.Font.SourceSans
             Textlist.Text = ""
             Textlist.TextColor3 = Color3.fromRGB(0, 0, 0)
             Textlist.TextSize = 14.000
 
-            UICorner.CornerRadius = UDim.new(0, 6)
+            UICorner.CornerRadius = UDim.new(0, 10)
             UICorner.Parent = Textlist
 
             Title.Name = "Title"
@@ -1264,13 +1268,13 @@ function library:CreateMain(title, description, keycode)
             ColorSlider.BackgroundColor3 = theme.LightContrast
             ColorSlider.BackgroundTransparency = 0
             ColorSlider.Position = UDim2.new(0, 0, 0.336569577, 0)
-            ColorSlider.Size = UDim2.new(0, 375, 0, 50)
+            ColorSlider.Size = UDim2.new(0, 350, 0, 30)
             ColorSlider.Font = Enum.Font.SourceSans
             ColorSlider.Text = ""
             ColorSlider.TextColor3 = Color3.fromRGB(0, 0, 0)
             ColorSlider.TextSize = 14.000
 
-            UICorner.CornerRadius = UDim.new(0, 6)
+            UICorner.CornerRadius = UDim.new(0, 10)
             UICorner.Parent = ColorSlider
 
             Icon.Name = "Icon"
