@@ -62,6 +62,15 @@ EngoThemes = {
         BackgroundGradient = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(64, 68, 75)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(64, 68, 75))},
         Darkness = Color3.fromRGB(0, 0, 0),
     },
+    JIDY = {
+        TextColor = Color3.fromRGB(0, 255, 0),
+        DescriptionTextColor = Color3.fromRGB(212, 212, 212),
+        DarkTextColor = Color3.fromRGB(255, 0, 0),
+        DarkContrast = Color3.fromRGB(41, 43, 47),
+        LightContrast = Color3.fromRGB(54, 57, 63),
+        BackgroundGradient = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 220)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 220))},
+        Darkness = Color3.fromRGB(0, 0, 0),
+    },
 }
 local theme = EngoThemes.Engo
 
@@ -456,7 +465,7 @@ function library:CreateMain(title, description, keycode)
             Textbox.BackgroundColor3 = theme.LightContrast
             Textbox.BackgroundTransparency = 0
             Textbox.Position = UDim2.new(0, 0, 0.326860845, 0)
-            Textbox.Size = UDim2.new(0, 350, 0, 30)
+            Textbox.Size = UDim2.new(0, 330, 0, 30)
             Textbox.Font = Enum.Font.SourceSans
             Textbox.Text = ""
             Textbox.TextColor3 = Color3.fromRGB(0, 0, 0)
