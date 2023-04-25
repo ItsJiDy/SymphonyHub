@@ -172,6 +172,7 @@ function library:CreateMain(title, description, keycode)
     local Info = Instance.new("Frame")
     local Title = Instance.new("TextLabel")
     local Description = Instance.new("TextLabel")
+    local Profile = Instance.new("ImageLabel")
 
     EngoUI.Name = "EngoUI"
     EngoUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -226,7 +227,7 @@ function library:CreateMain(title, description, keycode)
     Title.Position = UDim2.new(0.158940405, 0, 0.132075474, 0)
     Title.Size = UDim2.new(0, 116, 0, 21)
     Title.Font = Enum.Font.GothamBold
-    Title.Text = title
+    Title.Text = "E̶r̴r̴o̸r̷ ̵4̷2̵2̴: N̸̡͔̱̤̳̟͗͝o̷̫͇̜͈̪̓͂̕ẗ̸̨̘̼̥͝ ̷͙̳̦͉͈̖͌̕F̴͇̣̠̣̫͎̎̃̔́o̷̧̞̐̀̑̆u̶̜͗̏ͅn̷̢͖̪̘͗̓d̷̰́"
     Title.TextColor3 =  theme.TextColor
     Title.TextSize = 15.000
     Title.TextXAlignment = Enum.TextXAlignment.Left
@@ -235,13 +236,21 @@ function library:CreateMain(title, description, keycode)
     Description.Parent = Info
     Description.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
     Description.BackgroundTransparency = 1.000
-    Description.Position = UDim2.new(0.158940405, 0, 0.528301895, 0)
+    Description.Position = UDim2.new(0.358940405, 0, 0.55, 0)
     Description.Size = UDim2.new(0, 116, 0, 16)
     Description.Font = Enum.Font.Gotham
     Description.Text = description
     Description.TextColor3 = theme.DescriptionTextColor
-    Description.TextSize = 11.000
+    Description.TextSize = 12.000
     Description.TextXAlignment = Enum.TextXAlignment.Left
+
+    Profile.Name = "idk"
+    Profile.Parent = Info
+    Profile.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Profile.BackgroundTransparency = 1.000
+    Profile.Position = UDim2.new(0.15, 0, 0.5, 0)
+    Profile.Size = UDim2.new(0, 25, 0, 25)
+    Profile.Image = "https://web.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&Format=Png&userid=".. game.Players.LocalPlayer.UserId
 
     local library2 = {}
     library2["Tabs"] = {}
