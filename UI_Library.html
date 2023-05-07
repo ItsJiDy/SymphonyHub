@@ -10,14 +10,18 @@ local function AddCorner(Parent, Radius1, Radius2)
     UICorner.Parent = Parent
 end
 
-function library:CreateMain()
+function library:CreateMain(key)
     local Gui = Instance.new("ScreenGui")
     local MainFrame = Instance.new("Frame")
     local TopTitle = Instance.new("TextLabel")
     local TabFrame = Instance.new("ScrollingFrame")
     local UIListLayout = Instance.new("UIListLayout")
     local CoreGui = game:GetService("CoreGui")
+    local UserInputService = game:GetService("UserInputService")
     local bn = {}
+    local keybinds = {}
+    keybinds[0] = {}
+    keybinds[0]["pressable"] = false
     local TabCount = 0.02
     local FirstTab = true
     local TableTab = {}
@@ -62,6 +66,29 @@ function library:CreateMain()
     UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIListLayout.Padding = UDim.new(0.01, 1)
+    
+    UserInputService.InputBegan:Connect(function(KEY)
+        if KEY.KeyCode == Enum.KeyCode.Unknown then return end
+        if KEY.KeyCode == key then
+            MainFrame.Visible = not MainFrame.Visible
+        else
+            if keybinds[0]["pressable"] then
+                for _ = 1, #keybinds do
+                    if keybinds[_].Value == "" then
+                        keybinds[_].Value = KEY.KeyCode
+                        keybinds[_].Inst.Text = UserInputService:GetStringForKeyCode(KEY.KeyCode)
+                        keybinds[0]["pressable"] = false
+                    end
+                end
+            else
+                for _ = 1, #keybinds do
+                    if keybinds[_].Value == KEY.KeyCode then
+                        keybinds[_].Callback()
+                    end
+                end
+            end
+        end
+    end)
     
     function bn:CreateTab(name)
         local Tab = Instance.new("TextButton")
@@ -231,55 +258,6 @@ function library:CreateMain()
             end)
         end
     
-        function Property:CreateToggle(tgleName, callback)
-            tgleName = tgleName or "Toggle"
-            callback = callback or function() end
-    
-            local Frame = Instance.new("Frame")
-            local Label = Instance.new("TextLabel")
-            local Toggle = Instance.new("TextButton")
-            local toggle = false
-            
-            Frame.Name = tgleName .. "_Frame"
-            Frame.Parent = ScrollingFrame
-            Frame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
-            Frame.Size = UDim2.new(0, 315, 0, 25)
-
-            AddCorner(Frame, 0, 5)
-    
-            Label.Name = "Title"
-            Label.Parent = Frame
-            Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Label.BackgroundTransparency = 1
-            Label.Size = UDim2.new(0, 200, 0, 25)
-            Label.Font = Enum.Font.SourceSansBold
-            Label.Text = " " .. tgleName
-            Label.TextColor3 = Color3.fromRGB(255, 255, 255)
-            Label.TextSize = 20
-            Label.TextXAlignment = Enum.TextXAlignment.Left
-    
-            Toggle.Name = "Toggle"
-            Toggle.Parent = Frame
-            Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Toggle.BackgroundTransparency = 1
-            Toggle.Size = UDim2.new(0, 310, 0, 25)
-            Toggle.Font = Enum.Font.SourceSansBold
-            Toggle.Text = "🟥"
-            Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-            Toggle.TextSize = 20
-            Toggle.TextXAlignment = Enum.TextXAlignment.Right
-            Toggle.MouseButton1Click:Connect(function()
-                toggle = not toggle
-                if toggle then
-                    Toggle.Text = "🟨"
-                    callback(toggle)
-                else
-                    Toggle.Text = "🟥"
-                    callback(toggle)
-                end
-            end)
-        end
-    
         function Property:CreateTextbox(tbName, callback)
             tbName = tbName or "Textbox"
             callback = callback or function() end
@@ -321,6 +299,58 @@ function library:CreateMain()
             Textbox.FocusLost:Connect(function()
                 callback(Textbox.Text)
             end)
+        end
+
+        function Property:CreateKeybind(tbName, originkey, callback)
+            tbName = tbName or "KeyBinds"
+            originkey = originkey or ""
+            callback = callback or function() end
+    
+            local Frame = Instance.new("Frame")
+            local Label = Instance.new("TextLabel")
+            local Textbox = Instance.new("TextButton")
+            local P = #keybinds + 1
+            
+            Frame.Name = tbName .. "_Frame"
+            Frame.Parent = ScrollingFrame
+            Frame.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
+            Frame.Size = UDim2.new(0, 315, 0, 25)
+
+            AddCorner(Frame, 0, 5)
+    
+            Label.Name = "Title"
+            Label.Parent = Frame
+            Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Label.BackgroundTransparency = 1
+            Label.Size = UDim2.new(0, 200, 0, 25)
+            Label.Font = Enum.Font.SourceSansBold
+            Label.Text = " " .. tbName
+            Label.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Label.TextSize = 20
+            Label.TextXAlignment = Enum.TextXAlignment.Left
+    
+            Textbox.Name = "Textbox"
+            Textbox.Parent = Frame
+            Textbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            Textbox.BackgroundTransparency = 1
+            Textbox.Size = UDim2.new(0, 310, 0, 25)
+            Textbox.Font = Enum.Font.SourceSansBold
+            Textbox.Text = UserInputService:GetStringForKeyCode(originkey)
+            Textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+            Textbox.TextSize = 20
+            Textbox.TextXAlignment = Enum.TextXAlignment.Right
+            Textbox.MouseButton1Click:Connect(function()
+                if not keybinds["pressable"] then
+                    Textbox.Text = "Press Any Key"
+                    keybinds[P].Value = ""
+                    keybinds[0]["pressable"] = true
+                end
+            end)
+            
+            keybinds[P] = {}
+            keybinds[P].Value = originkey
+            keybinds[P].Callback = callback
+            keybinds[P].Inst = Textbox
         end
 
         function Property:CreateDropdown(lbName, list, callback)
