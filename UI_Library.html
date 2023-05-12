@@ -33,10 +33,10 @@ function library:CreateMain(key)
     MainFrame.Name = "MainFrame"
     MainFrame.Parent = Gui
     MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    MainFrame.Size = UDim2.new(0, 450, 0, 300)
+    MainFrame.Size = UDim2.new(0, 0, 0, 20)
     MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
     MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-    MainFrame.Visible = true
+    MainFrame.Visible = false
     MainFrame.Active = true
     MainFrame.Draggable = true
 
@@ -47,7 +47,7 @@ function library:CreateMain(key)
     TopTitle.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
     TopTitle.Size = UDim2.new(0, 450, 0, 20)
     TopTitle.Font = Enum.Font.SourceSansBold
-    TopTitle.Text = " • Symphony Hub [BETA]"
+    TopTitle.Text = ""
     TopTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
     TopTitle.TextSize = 20
     TopTitle.TextXAlignment = Enum.TextXAlignment.Left
@@ -55,10 +55,11 @@ function library:CreateMain(key)
     TabFrame.Name = "TabFrame"
     TabFrame.Parent = MainFrame
     TabFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-    TabFrame.Size = UDim2.new(0, 115, 0, 265)
+    TabFrame.Size = UDim2.new(0, 0, 0, 265)
     TabFrame.Position = UDim2.new(0.023, 0, 0.09, 0)
     TabFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
     TabFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    TabFrame.Visible = false
 
     AddCorner(TabFrame, 0, 5)
 
@@ -66,6 +67,24 @@ function library:CreateMain(key)
     UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIListLayout.Padding = UDim.new(0.01, 1)
+    
+    wait(1)
+    
+    MainFrame.Visible = true
+    MainFrame:TweenSize(UDim2.new(0, 450, 0, 20), "Out", "Quad", 0.5, true)
+    
+    wait(0.5)
+    
+    local title = " • Symphony Hub [BETA]"
+    
+    for i = 1, #title do
+        TopTitle.Text = string.sub(title, 1, i)
+        wait(0.1)
+    end
+
+    wait(0.5)
+    
+    MainFrame:TweenSize(UDim2.new(0, 450, 0, 300), "Out", "Quad", 0.5, true)
     
     UserInputService.InputBegan:Connect(function(KEY)
         if KEY.KeyCode == Enum.KeyCode.Unknown then return end
@@ -108,10 +127,10 @@ function library:CreateMain(key)
 
         AddCorner(Tab, 0, 5)
     
-        ScrollingFrame.Name = "Inst"
+        ScrollingFrame.Name = "Inst_" .. name
         ScrollingFrame.Parent = MainFrame
         ScrollingFrame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-        ScrollingFrame.Size = UDim2.new(0, 315, 0, 265)
+        ScrollingFrame.Size = UDim2.new(0, 0, 0, 265)
         ScrollingFrame.Position = UDim2.new(0.29, 0, 0.09, 0)
         ScrollingFrame.ScrollBarThickness = 0
         ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
@@ -138,15 +157,17 @@ function library:CreateMain(key)
     
         local function Click()
             for _ = 1, #TableTab do
-                if TableTab[_].Name == name then
-                    TableTab[_].Inst.Visible = true
-                    game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
-                else
+                if TableTab[_].Inst.Visible then
+                    game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
+                    TableTab[_].Inst:TweenSize(UDim2.new(0, 0, 0, 265), "Out", "Quad", 0.5, true)
+                    wait(0.5)
                     TableTab[_].Inst.Visible = false
                     local Info = TweenInfo.new(1)
-                    game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
                 end
             end
+            ScrollingFrame.Visible = true
+            ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
+            game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
         end
     
         TabCount = TabCount + 0.1
@@ -160,13 +181,19 @@ function library:CreateMain(key)
         Tab.MouseButton1Click:Connect(Click)
     
         if FirstTab then
-            TableTab[count].Inst.Visible = true
-            TableTab[count].Tab.TextSize = 20
             FirstTab = false
+            wait(0.5)
+            TabFrame.Visible = true
+            TabFrame:TweenSize(UDim2.new(0, 115, 0, 265), "Out", "Quad", 0.5, true)
+            ScrollingFrame.Visible = true
+            ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
+            game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
         else
         end
     
         local Property = {}
+        
+        wait(0.5)
     
         function Property:CreateButton(btnName, callback)
             btnName = btnName or "Button"
