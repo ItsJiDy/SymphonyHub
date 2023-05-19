@@ -25,6 +25,15 @@ function library:CreateMain(key)
     local TabCount = 0.02
     local FirstTab = true
     local TableTab = {}
+    local configs = {}
+    local defaults = {
+        ["arm7-4a/mobilesupport"] = {
+            Toggle = {},
+            exploit = identifyexecutor()
+        }
+    }
+    local file = ".SHConfig"
+    configs = defaults
     
     Gui.Name = "Symphony Hub"
     Gui.Parent = CoreGui
@@ -67,13 +76,27 @@ function library:CreateMain(key)
     UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIListLayout.Padding = UDim.new(0.01, 1)
-    
-    wait(1)
+
+    local success, errors =pcall(function()
+        configs = game:GetService("HttpService"):JSONDecode(readfile(file)) end)
+        
+        if not success and errors then
+            writefile(file, game:GetService("HttpService"):JSONEncode(defaults))
+            configs = defaults 
+            else
+        end
+
+    local function async(name, value)
+        configs["arm7-4a/mobilesupport"]["Toggle"][name] = value
+        writefile(file, game:GetService("HttpService"):JSONEncode(configs))
+    end
+
+    task.wait(1)
     
     MainFrame.Visible = true
     MainFrame:TweenSize(UDim2.new(0, 450, 0, 20), "Out", "Quad", 0.5, true)
     
-    wait(0.5)
+    task.wait(0.5)
     
     local title = " • Symphony Hub [BETA]"
     
@@ -82,7 +105,7 @@ function library:CreateMain(key)
         wait(0.1)
     end
 
-    wait(0.5)
+    task.wait(0.5)
     
     MainFrame:TweenSize(UDim2.new(0, 450, 0, 300), "Out", "Quad", 0.5, true)
     
@@ -193,7 +216,7 @@ function library:CreateMain(key)
     
         local Property = {}
         
-        wait(0.5)
+        task.wait(0.5)
     
         function Property:CreateButton(btnName, callback)
             btnName = btnName or "Button"
@@ -206,7 +229,7 @@ function library:CreateMain(key)
             Button.BackgroundColor3 = Color3.fromRGB(70, 70, 70)
             Button.Size = UDim2.new(0, 315, 0, 25)
             Button.Font = Enum.Font.SourceSansBold
-            Button.Text = "🖱️ " .. btnName
+            Button.Text = btnName
             Button.TextColor3 = Color3.fromRGB(255, 255, 255)
             Button.TextSize = 20
             Button.MouseButton1Click:Connect(callback)
@@ -242,7 +265,7 @@ function library:CreateMain(key)
     
             local Frame = Instance.new("Frame")
             local Label = Instance.new("TextLabel")
-            local Toggle = Instance.new("TextButton")
+            local Toggle = Instance.new("ImageButton")
             local toggle = false
             
             Frame.Name = tgleName .. "_Frame"
@@ -265,24 +288,38 @@ function library:CreateMain(key)
     
             Toggle.Name = "Toggle"
             Toggle.Parent = Frame
+            Toggle.AnchorPoint = Vector2.new(0, 0.5)
             Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Toggle.BackgroundTransparency = 1
-            Toggle.Size = UDim2.new(0, 310, 0, 25)
-            Toggle.Font = Enum.Font.SourceSansBold
-            Toggle.Text = "🟥"
-            Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-            Toggle.TextSize = 20
-            Toggle.TextXAlignment = Enum.TextXAlignment.Right
-            Toggle.MouseButton1Click:Connect(function()
+            Toggle.BackgroundTransparency = 1.000
+            Toggle.ClipsDescendants = true
+            Toggle.Position = UDim2.new(0.85, 0, 0.5, 0)
+            Toggle.Size = UDim2.new(0, 25, 0, 25)
+            Toggle.ImageColor3 = Color3.fromRGB(255, 255, 255)
+            Toggle.Image = "rbxassetid://3926311105"
+            Toggle.ImageRectOffset = Vector2.new(940, 784)
+            Toggle.ImageRectSize = Vector2.new(48, 48)
+            Toggle.SliceScale = 0.500
+
+            local function Toggles()
                 toggle = not toggle
-                if toggle then
-                    Toggle.Text = "🟨"
+                async(tgleName, toggle)
+                if not toggle then
+                    Toggle.ImageRectOffset = Vector2.new(940, 784)
+                    Toggle.ImageRectSize = Vector2.new(48, 48)
                     callback(toggle)
                 else
-                    Toggle.Text = "🟥"
+                    Toggle.ImageRectOffset = Vector2.new(4, 836)
+                    Toggle.ImageRectSize = Vector2.new(48, 48)
                     callback(toggle)
                 end
-            end)
+            end
+
+            Toggle.MouseButton1Click:Connect(Toggles)
+            if configs["arm7-4a/mobilesupport"]["Toggle"][tgleName] == true then
+                Toggles()
+            else
+                async(tgleName, false)
+            end
         end
     
         function Property:CreateTextbox(tbName, callback)
