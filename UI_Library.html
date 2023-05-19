@@ -265,7 +265,8 @@ function library:CreateMain(key)
     
             local Frame = Instance.new("Frame")
             local Label = Instance.new("TextLabel")
-            local Toggle = Instance.new("ImageButton")
+            local Toggle = Instance.new("TextButton")
+            local Toggle_2 = Instance.new("Frame")
             local toggle = false
             
             Frame.Name = tgleName .. "_Frame"
@@ -289,27 +290,36 @@ function library:CreateMain(key)
             Toggle.Name = "Toggle"
             Toggle.Parent = Frame
             Toggle.AnchorPoint = Vector2.new(0, 0.5)
-            Toggle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Toggle.BackgroundTransparency = 1.000
-            Toggle.ClipsDescendants = true
-            Toggle.Position = UDim2.new(0.85, 0, 0.5, 0)
-            Toggle.Size = UDim2.new(0, 25, 0, 25)
-            Toggle.ImageColor3 = Color3.fromRGB(255, 255, 255)
-            Toggle.Image = "rbxassetid://3926311105"
-            Toggle.ImageRectOffset = Vector2.new(940, 784)
-            Toggle.ImageRectSize = Vector2.new(48, 48)
-            Toggle.SliceScale = 0.500
+            Toggle.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+            Toggle.BackgroundTransparency = 0.000
+            Toggle.ClipsDescendants = false
+            Toggle.Position = UDim2.new(0.8, 0, 0.5, 0)
+            Toggle.Size = UDim2.new(0, 45, 0, 15)
+            Toggle.Text = ""
+
+            AddCorner(Toggle, 0, 15)
+
+            Toggle_2.Name = "Toggle_2"
+            Toggle_2.Parent = Toggle
+            Toggle_2.AnchorPoint = Vector2.new(0, 0.5)
+            Toggle_2.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+            Toggle_2.BackgroundTransparency = 0.000
+            Toggle_2.ClipsDescendants = false
+            Toggle_2.Position = UDim2.new(0.1, 0, 0.5, 0)
+            Toggle_2.Size = UDim2.new(0, 17, 0, 12.5)
+
+            AddCorner(Toggle_2, 0, 15)
 
             local function Toggles()
                 toggle = not toggle
                 async(tgleName, toggle)
                 if not toggle then
-                    Toggle.ImageRectOffset = Vector2.new(940, 784)
-                    Toggle.ImageRectSize = Vector2.new(48, 48)
+                    game:GetService("TweenService"):Create(Toggle,TweenInfo.new(0.25),{ BackgroundColor3 = Color3.fromRGB(0, 255, 0)}):Play()
+                    Toggle_2:TweenPosition(UDim2.new(0.5,0,0.5,0), "Out", "Quad", 0.25, true)
                     callback(toggle)
                 else
-                    Toggle.ImageRectOffset = Vector2.new(4, 836)
-                    Toggle.ImageRectSize = Vector2.new(48, 48)
+                    game:GetService("TweenService"):Create(Toggle,TweenInfo.new(0.25),{ BackgroundColor3 = Color3.fromRGB(255, 0, 0)}):Play()
+                    Toggle_2:TweenPosition(UDim2.new(0.1,0,0.5,0), "Out", "Quad", 0.25, true)
                     callback(toggle)
                 end
             end
@@ -350,19 +360,22 @@ function library:CreateMain(key)
     
             Textbox.Name = "Textbox"
             Textbox.Parent = Frame
-            Textbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Textbox.BackgroundTransparency = 1
-            Textbox.Size = UDim2.new(0, 310, 0, 25)
+            Textbox.BackgroundColor3 = Color3.fromRGB(104, 104, 104)
+            Textbox.BackgroundTransparency = 0
+            Textbox.AnchorPoint = Vector2.new(0, 0.5)
+            Textbox.Size = UDim2.new(0, 115, 0, 15)
+            Textbox.Position = UDim2.new(0.65, 0, 0.5, 0)
             Textbox.Font = Enum.Font.SourceSansBold
             Textbox.PlaceholderColor3 = Color3.fromRGB(0, 255, 0)
             Textbox.PlaceholderText = "Input Value"
             Textbox.Text = ""
             Textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-            Textbox.TextSize = 20
-            Textbox.TextXAlignment = Enum.TextXAlignment.Right
+            Textbox.TextSize = 15
             Textbox.FocusLost:Connect(function()
                 callback(Textbox.Text)
             end)
+
+            AddCorner(TextBox, 0, 5)
         end
 
         function Property:CreateKeybind(tbName, originkey, callback)
@@ -395,14 +408,15 @@ function library:CreateMain(key)
     
             Textbox.Name = "Textbox"
             Textbox.Parent = Frame
-            Textbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            Textbox.BackgroundTransparency = 1
-            Textbox.Size = UDim2.new(0, 310, 0, 25)
+            Textbox.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+            Textbox.BackgroundTransparency = 0
+            Textbox.Position = UDim2.new(0.7, 0, 0.5, 0)
+            Textbox.Size = UDim2.new(0, 85, 0, 15)
+            Textbox.AnchorPoint = Vector2.new(0, 0.5)
             Textbox.Font = Enum.Font.SourceSansBold
             Textbox.Text = UserInputService:GetStringForKeyCode(originkey)
             Textbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-            Textbox.TextSize = 20
-            Textbox.TextXAlignment = Enum.TextXAlignment.Right
+            Textbox.TextSize = 15
             Textbox.MouseButton1Click:Connect(function()
                 if not keybinds["pressable"] then
                     Textbox.Text = "Press Any Key"
@@ -410,7 +424,9 @@ function library:CreateMain(key)
                     keybinds[0]["pressable"] = true
                 end
             end)
-            
+
+            AddCorner(Textbox, 0, 5)
+
             keybinds[P] = {}
             keybinds[P].Value = originkey
             keybinds[P].Callback = callback
@@ -479,22 +495,3 @@ function library:CreateMain(key)
 end
 
 return library
-
---[[
-local HomeTab = CreateTab("Home")
-
-HomeTab:CreateButton("Work?", function()
-    print("yess")
-end)
-
-HomeTab:CreateLabel("ahahah")
-
-HomeTab:CreateToggle("Yessir", function(Boolean)
-    print(Boolean)
-end)
-
-HomeTab:CreateTextbox("Yessir", function(Boolean)
-    print(Boolean)
-end)
-
-local EconomyTab = CreateTab("Economy")]]
