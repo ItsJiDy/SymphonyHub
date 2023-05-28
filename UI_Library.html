@@ -16,6 +16,8 @@ function library:CreateMain(key)
     local TopTitle = Instance.new("TextLabel")
     local TabFrame = Instance.new("ScrollingFrame")
     local UIListLayout = Instance.new("UIListLayout")
+    local Logo = Instance.new("ImageLabel")
+    local Verified = Instance.new("ImageLabel")
     local CoreGui = game:GetService("CoreGui")
     local UserInputService = game:GetService("UserInputService")
     local bn = {}
@@ -32,6 +34,7 @@ function library:CreateMain(key)
             exploit = identifyexecutor()
         }
     }
+    local tabtp = false
     local file = ".SHConfig"
     configs = defaults
     
@@ -64,10 +67,11 @@ function library:CreateMain(key)
     TabFrame.Name = "TabFrame"
     TabFrame.Parent = MainFrame
     TabFrame.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-    TabFrame.Size = UDim2.new(0, 0, 0, 265)
-    TabFrame.Position = UDim2.new(0.023, 0, 0.09, 0)
+    TabFrame.Size = UDim2.new(0, 0, 0, 175)
+    TabFrame.Position = UDim2.new(0.023, 0, 0.39, 0)
     TabFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
     TabFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+    TabFrame.ScrollBarThickness = 0
     TabFrame.Visible = false
 
     AddCorner(TabFrame, 0, 5)
@@ -76,8 +80,31 @@ function library:CreateMain(key)
     UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
     UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
     UIListLayout.Padding = UDim.new(0.01, 1)
+    
+    Logo.Name = "Symphony Hub Logo"
+    Logo.Parent = MainFrame
+    Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Logo.BackgroundTransparency = 0
+    Logo.Position = UDim2.new(0.023, 0, 0.09, 0)
+    Logo.Size = UDim2.new(0, 0, 0, 85)
+    Logo.Image = "rbxassetid://13564730595"
+    Logo.Visible = false
+    
+    AddCorner(Logo, 0, 5)
 
-    local success, errors =pcall(function()
+    Verified.Name = "Symphony Hub Verified"
+    Verified.Parent = TopTitle
+    Verified.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    Verified.BackgroundTransparency = 1
+    Verified.Position = UDim2.new(0.42, 0, 0.5, 0)
+    Verified.AnchorPoint = Vector2.new(0.5, 0.5)
+    Verified.Size = UDim2.new(0, 17.5, 0, 17.5)
+    Verified.Image = "rbxassetid://9531355888"
+    Verified.Visible = false
+    
+    AddCorner(Verified, 0, 5)
+
+    local success, errors = pcall(function()
         configs = game:GetService("HttpService"):JSONDecode(readfile(file)) end)
         
         if not success and errors then
@@ -104,6 +131,8 @@ function library:CreateMain(key)
         TopTitle.Text = string.sub(title, 1, i)
         wait(0.1)
     end
+
+    Verified.Visible = true
 
     task.wait(0.5)
     
@@ -179,18 +208,22 @@ function library:CreateMain(key)
         Section.TextXAlignment = Enum.TextXAlignment.Left
     
         local function Click()
-            for _ = 1, #TableTab do
-                if TableTab[_].Inst.Visible then
-                    game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
-                    TableTab[_].Inst:TweenSize(UDim2.new(0, 0, 0, 265), "Out", "Quad", 0.5, true)
-                    wait(0.5)
-                    TableTab[_].Inst.Visible = false
-                    local Info = TweenInfo.new(1)
+            if not tabtp then
+                tabtp = true
+                for _ = 1, #TableTab do
+                    if TableTab[_].Inst.Visible then
+                        game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
+                        TableTab[_].Inst:TweenSize(UDim2.new(0, 0, 0, 265), "Out", "Quad", 0.5, true)
+                        wait(0.5)
+                        TableTab[_].Inst.Visible = false
+                    end
                 end
+                ScrollingFrame.Visible = true
+                ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
+                game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
+                wait(0.25)
+                tabtp = false
             end
-            ScrollingFrame.Visible = true
-            ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
-            game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
         end
     
         TabCount = TabCount + 0.1
@@ -207,7 +240,9 @@ function library:CreateMain(key)
             FirstTab = false
             wait(0.5)
             TabFrame.Visible = true
-            TabFrame:TweenSize(UDim2.new(0, 115, 0, 265), "Out", "Quad", 0.5, true)
+            TabFrame:TweenSize(UDim2.new(0, 115, 0, 175), "Out", "Quad", 0.5, true)
+            Logo.Visible = true
+            Logo:TweenSize(UDim2.new(0, 115, 0, 85), "Out", "Quad", 0.5, true)
             ScrollingFrame.Visible = true
             ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
             game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
