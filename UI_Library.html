@@ -224,7 +224,7 @@ end
         Tab.Font = Enum.Font.SourceSansBold
         Tab.Text = name
         Tab.TextColor3 = Color3.fromRGB(255, 255, 255)
-        Tab.TextSize = 16
+        Tab.TextSize = 13
         
         Tabb.Name = "Tabb_" .. name
         Tabb.Parent = TabFrame
@@ -270,9 +270,13 @@ end
             ImageR.Name = "Image Side"
             ImageR.Parent = Tab
             ImageR.Image = rbxid
-            ImageR.Size = UDim2.new(0, 20, 0, 15)
-            ImageR.Position = UDim2.new(0.2, 0, 0.5, 0)
-            ImageR.AchorPoint = Vector2.new(0.5, 0.5)
+            ImageR.Size = UDim2.new(0, 17.5, 0, 17.5)
+            ImageR.Position = UDim2.new(0.1, 0, 0.5, 0)
+            ImageR.AnchorPoint = Vector2.new(0.5, 0.5)
+            ImageR.BackgroundColor3 = Color3.fromRGB(225, 225, 225)
+            ImageR.BackgroundTransparency = 0
+            ImageR.ImageColor3 = Color3.fromRGB(255, 255, 255)
+            AddCorner(ImageR, 0, 5)
         else
         end
     
@@ -281,7 +285,7 @@ end
                 tabtp = true
                 for _ = 1, #TableTab do
                     if TableTab[_].Inst.Visible then
-                        game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
+                        game:GetService("TweenService"):Create(TableTab[_].Tab,TweenInfo.new(0.25),{ TextSize = 13 }):Play()
                         TableTab[_].Inst:TweenSize(UDim2.new(0, 0, 0, 265), "Out", "Quad", 0.5, true)
                         wait(0.5)
                         TableTab[_].Inst.Visible = false
@@ -289,7 +293,7 @@ end
                 end
                 ScrollingFrame.Visible = true
                 ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
-                game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
+                game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
                 wait(0.25)
                 tabtp = false
             end
@@ -314,7 +318,7 @@ end
             Logo:TweenSize(UDim2.new(0, 105, 0, 85), "Out", "Quad", 0.5, true)
             ScrollingFrame.Visible = true
             ScrollingFrame:TweenSize(UDim2.new(0, 315, 0, 265), "Out", "Quad", 0.5, true)
-            game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 20 }):Play()
+            game:GetService("TweenService"):Create(Tab,TweenInfo.new(0.25),{ TextSize = 16 }):Play()
         else
         end
     
@@ -463,7 +467,7 @@ end
                 Instp[_] = ButtonEE
             end
         end
-create("Select Color", {"Really red", "Bright green", "Bright blue", "White", "Grey", "Black", "Dark grey", "Dark green", "Gold", "Silver", "Neon orange", "Neon green", "Fire yellow", "Light lilac", "Lilac", "Bright orange"}, function(Selected)
+create("Select Color", {"Really red", "Bright green", "Bright blue", "White", "Grey", "Black", "Dark grey", "Dark green", "Gold", "Silver", "Neon orange", "Neon green", "Brick yellow", "Light lilac", "Lilac", "Bright orange", "Pastel blue", "Nougat", "Bright violet", "Neon orange", "Sand blue"}, function(Selected)
 asyncStroke(Selected)
 updatee("UI Stroke: "..Selected)
 end)
