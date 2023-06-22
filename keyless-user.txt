@@ -1,3 +1,1 @@
-local e = {[1]={"Jelixkiller",3989209136}}
-
-return e
+return {[1]={"ItsJiDy","sky129613",2645134467},[2]={"JelixCeus","Jelixkiller",3989209136},[3]={"ICAN","CuteBobikBobikCute",3355250411}}
