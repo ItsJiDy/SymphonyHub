@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <title>Symphony Hub Key System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"
+        />
+        <style>
+            body {
+                    background: #f1f1f1;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+    
+                .popup {
+                    position: fixed;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    background: black;
+                    border-radius: 5px;
+                    padding: 20px;
+                    width: 450px;
+                    text-align: center;
+                }
+    
+                .title {
+                    font-weight: 700;
+                    font-size: 20px;
+                    text-align: center;
+                    margin-bottom: 25px;
+                    color:rgb(255, 255, 255);
+                    text-transform: uppercase;
+                }
+    
+                input {
+                    font-size: 17px;
+                    border: none;
+                    background: violet;
+                    font-family: 'Courier New', Courier, monospace;
+                    padding: 5px;
+                    border-radius: 5px;
+                    width: calc(100% - 10px);
+                    text-align: center;
+                    text-overflow: ellipsis;
+                }
+    
+                .image {
+                    margin-bottom: 20px;
+                }
+    
+                button {
+                    font-size: 12px;
+                    border: none;
+                    background: blue;
+                    text-transform: uppercase;
+                    padding: 6px;
+                    font-weight: 700;
+                    color:rgb(0, 255, 0);
+                    border-radius: 5px;
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 10px;
+                    cursor: pointer;
+                }
+    
+                button:hover {
+                    background: #ddd;
+                }
+        </style>
+    </head>
+    
+    <body>
+        <script>
+            if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
+              window.location.href = "https://itsjidy.github.io/SymphonyHub/Key/404.html";
+            }
+        </script>
+        <div class="popup">
+            <div class="title">SH Key System</div>
+            <input id="tokenfield" type="text" readonly value=""
+            placeholder="Your Key...">
+            <button id="button" onclick="">Copy</button>
+            <div style="font-size: 12px; opacity: 0.7; margin: 15px 10px 0 10px;">Symphony Hub Key.</div>
+            <script>
+                const token = new URLSearchParams(document.location.search).get("value");
+
+                  document.getElementById("tokenfield").value = token;
+                  document.getElementById("button").onclick = () => {
+                    document.getElementById("button").innerText = "Copied!";
+                    navigator.clipboard.writeText(token);
+                    setTimeout(function () { window.top.close() }, 3000);
+                  };
+            </script>
+        </div>
+        <script>
+            (function(){var js = "window['__CF$cv$params']={r:'7b0dec4939d50437',m:'p91DqotfdBMZs4WuQeU3d2NXe0U.4J2_m40RcTPay4M-1680321604-0-ASgpvtTWgM1b75Sb0173UUL/k9Zhjn9Cjon5ZQjbWX9cKRe6KoXbgUv9fwvYXq5dlUX7V/4mafJobc283JB18bje2P9Cxo/NIMA/sB7A6IuwL6RG37HOyV2TnC31YEOv1w==',s:[0x13688fbcbc,0x12dbe59dae],u:'/cdn-cgi/challenge-platform/h/b'};var now=Date.now()/1000,offset=14400,ts=''+(Math.floor(now)-Math.floor(now%offset)),_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/h/b/scripts/alpha/invisible.js?ts='+ts,document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();
+        </script>
+    </body>
+
+</html>
