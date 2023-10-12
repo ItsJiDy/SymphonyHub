@@ -1,0 +1,161 @@
+local KeySystemGui = Instance.new("ScreenGui")
+local KeySystemFrame = Instance.new("Frame")
+local UIScale = Instance.new("UIScale")
+local KTitle = Instance.new("TextLabel")
+local KTextbox = Instance.new("TextBox")
+local KGetKeyLayer = Instance.new("Frame")
+local UIStroke = Instance.new("UIStroke")
+local KGetKey = Instance.new("TextButton")
+local KOkLayer = Instance.new("Frame")
+local UIStroke_2 = Instance.new("UIStroke")
+local KOk = Instance.new("TextButton")
+local Players = game:GetService("Players")
+local Client = Players.LocalPlayer
+local CoreGui = game:GetService("CoreGui")
+local clipBoard = setclipboard or toclipboard or set_clipboard or (Clipboard and Clipboard.set)
+local MarketplaceService = game:GetService("MarketplaceService")
+local Premium = MarketplaceService:UserOwnsGamePassAsync(Client.UserId, 22739804)
+local FileConfig = ".SHKeyAuth"
+local KeyAuth = game:HttpGet("https://pastebin.com/raw/s9FbTSLZ")
+
+KeySystemGui.Name = "Symphony Hub Key System"
+KeySystemGui.Parent = CoreGui
+
+KeySystemFrame.Name = "MainFrame"
+KeySystemFrame.Parent = KeySystemGui
+KeySystemFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+KeySystemFrame.Size = UDim2.new(0, 350, 0, 100)
+KeySystemFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+KeySystemFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+KeySystemFrame.Visible = true
+
+UIScale.Name = "Scaler"
+UIScale.Parent = KeySystemFrame
+UIScale.Scale = workspace.CurrentCamera.ViewportSize.Y / 350
+
+KTitle.Name = "Title"
+KTitle.Parent = KeySystemFrame
+KTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KTitle.BackgroundTransparency = 1
+KTitle.Size = UDim2.new(0, 200, 0, 20)
+KTitle.Position = UDim2.new(0.005, 0, 0.05, 0)
+KTitle.AnchorPoint = Vector2.new(0, 0.5)
+KTitle.Font = Enum.Font.SourceSansBold
+KTitle.Text = "Symphony Hub - Key System"
+KTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+KTitle.TextSize = 16
+KTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+KTextbox.Name = "Key Input"
+KTextbox.Parent = KeySystemFrame
+KTextbox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KTextbox.BackgroundTransparency = 0.9
+KTextbox.Size = UDim2.new(0, 350, 0, 20)
+KTextbox.Position = UDim2.new(0.005, 0, 0.35, 0)
+KTextbox.AnchorPoint = Vector2.new(0, 0.5)
+KTextbox.Font = Enum.Font.SourceSansBold
+KTextbox.ClearTextOnFocus = false
+KTextbox.PlaceholderText = "Enter Key Here..."
+KTextbox.PlaceholderColor3 = Color3.fromRGB(104, 104, 104)
+KTextbox.Text = ""
+KTextbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+KTextbox.TextSize = 16
+KTextbox.TextXAlignment = Enum.TextXAlignment.Left
+
+KGetKeyLayer.Name = "Get Key Button"
+KGetKeyLayer.Parent = KeySystemFrame
+KGetKeyLayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KGetKeyLayer.BackgroundTransparency = 1
+KGetKeyLayer.Size = UDim2.new(0, 45, 0, 35)
+KGetKeyLayer.Position = UDim2.new(0.65, 0, 0.55, 0)
+
+UIStroke.Name = "UIStroke"
+UIStroke.Parent = KGetKeyLayer
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 2
+
+KGetKey.Name = "Layer"
+KGetKey.Parent = KGetKeyLayer
+KGetKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KGetKey.BackgroundTransparency = 1
+KGetKey.Size = UDim2.new(0, 45, 0, 35)
+KGetKey.AnchorPoint = Vector2.new(0.5, 0.5)
+KGetKey.Position = UDim2.new(0.5, 0, 0.5, 0)
+KGetKey.Font = Enum.Font.SourceSans
+KGetKey.Text = "Get Key"
+KGetKey.TextColor3 = Color3.fromRGB(255, 255, 255)
+KGetKey.TextSize = 15
+KGetKey.MouseButton1Click:Connect(
+    function()
+        clipBoard(game:HttpGet("https://itsjidy.github.io/SymphonyHub/dcinv.txt"))
+    end
+)
+
+KOkLayer.Name = "Ok Button"
+KOkLayer.Parent = KeySystemFrame
+KOkLayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KOkLayer.BackgroundTransparency = 1
+KOkLayer.Size = UDim2.new(0, 35, 0, 35)
+KOkLayer.Position = UDim2.new(0.85, 0, 0.55, 0)
+
+UIStroke_2.Name = "UIStroke"
+UIStroke_2.Parent = KOkLayer
+UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Thickness = 2
+
+KOk.Name = "Layer"
+KOk.Parent = KOkLayer
+KOk.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+KOk.BackgroundTransparency = 1
+KOk.Size = UDim2.new(0, 35, 0, 35)
+KOk.AnchorPoint = Vector2.new(0.5, 0.5)
+KOk.Position = UDim2.new(0.5, 0, 0.5, 0)
+KOk.Font = Enum.Font.SourceSans
+KOk.Text = "OK"
+KOk.TextColor3 = Color3.fromRGB(255, 255, 255)
+KOk.TextSize = 15
+KOk.MouseButton1Click:Connect(
+    function()
+        if KTextbox.Text == KeyAuth then
+            KeySystemFrame:TweenSize(UDim2.new(0, 0, 0, 0), "Out", "Quad", 0.25, true)
+            task.wait(0.25)
+            KeySystemGui:Destroy()
+            if game.PlaceId == 142823291 then
+		        loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/Games/Murder-Mystery-2.html"))()
+		    elseif game.PlaceId == 13772394625 then
+		        loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/Games/Blade-Ball.html"))()
+		    end
+		else
+		    KOk.TextColor3 = Color3.fromRGB(255, 0, 0)
+	    	task.wait(0.5)
+	        KOk.TextColor3 = Color3.fromRGB(255, 255, 255)
+        end
+    end
+)
+
+coroutine.wrap(
+    function()
+		if Premium then
+		    KeySystemGui:Destroy()
+		    if game.PlaceId == 142823291 then
+		        loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/Games/Murder-Mystery-2.html"))()
+		    elseif game.PlaceId == 13772394625 then
+		        loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/Games/Blade-Ball.html"))()
+		    end
+		else
+		    if isfile(FileConfig) then
+		        if readfile(FileConfig) == KeyAuth then
+		            KeySystemGui:Destroy()
+				    if game.PlaceId == 142823291 then
+				        loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/Games/Murder-Mystery-2.html"))()
+				    elseif game.PlaceId == 13772394625 then
+				        loadstring(game:HttpGet("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/Games/Blade-Ball.html"))()
+				    end
+		        end
+		    else
+		        writefile(FileConfig, "")
+		        KeySystemFrame.Visible = true
+		    end
+		end
+	end
+)()
