@@ -17,7 +17,7 @@ end
 
 function Module:WaitTask(TaskName)
     if Connections[Name] ~= nil then
-        if typeof(TaskConnection) == "RBXScriptConnection" then
+        if typeof(Connections[Name]) == "RBXScriptConnection" then
             Connections[Name]:Wait()
         else
             Module.TracebackSend("'" .. TaskName .. "' is not a type of RBXScriptConnection.")
@@ -29,7 +29,7 @@ end
 
 function Module:DestroyTask(TaskName)
     if Connections[Name] ~= nil then
-        if typeof(TaskConnection) == "RBXScriptConnection" then
+        if typeof(Connections[Name]) == "RBXScriptConnection" then
             Connections[Name]:Disconnect()
             Connections[Name] = nil
         else
