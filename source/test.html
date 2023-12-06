@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PUT Request with Hidden Input Field</title>
+</head>
+<body>
+  <form id="updateUserForm" action="/api/users/123" method="post">
+    <input type="hidden" name="_method" value="put">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="John Doe">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value="johndoe@example.com">
+    <br>
+    <button type="submit">Update User</button>
+  </form>
+
+  <script>
+    const updateUserForm = document.getElementById('updateUserForm');
+
+    updateUserForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const xhr = new XMLHttpRequest();
+      xhr.open('PUT', 'https://api.github.com/repos/ItsJiDy/SymphonyHubChecking/contents');
+      xhr.setRequestHeader('Content-Type', 'application/json', 'X-GitHub-Api-Version', '2022-11-28', 'Authorization', 'Bearer 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', 'Accept', 'application/vnd.github+json');
+      xhr.send(JSON.stringify({
+        message: lol,
+        content:bXkgbmV3IGZpbGUgY29udGVudHM=,
+        owner: ItsJiDy,
+        repo: SymphonyHubChecking,
+        path: Test.txt,
+        branch: master,
+        
+      }));
+
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          alert('User updated successfully');
+        } else {
+          alert('Error updating user');
+        }
+      };
+    });
+  </script>
+</body>
+</html>
