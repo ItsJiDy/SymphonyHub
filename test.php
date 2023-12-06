@@ -1,14 +1,16 @@
-<?php
-$isGetRequest = isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'GET';
+function convertHTMLToRawText($htmlParam) {
+    // Remove HTML tags
+    $rawText = preg_replace("/<[^>]*>/", "", $htmlParam);
 
-if ($isGetRequest) {
-    // Handle GET API request
-    $text = $_GET['text'];
-    $processedText = processText($text); // Implement your text processing function here
-    echo $processedText;
-} else {
-    // Handle direct page loading
-    // Generate and display raw text directly in HTML
-    $rawText = "Generated Raw Text"; // Replace with your desired raw text
-    echo $rawText;
+    // Decode HTML entities
+    $rawText = html_entity_decode($rawText);
+
+    // Normalize newlines and whitespace (optional)
+    $rawText = str_replace(["\r\n", "\n", "\t"], "\n", $rawText);
+    $rawText = preg_replace("/\s{2,}/", " ", $rawText);
+
+    return trim($rawText);
 }
+$htmlParam = "<p>This is an example of HTML text with tags and entities.</p>";
+$rawText = convertHTMLToRawText($htmlParam);
+echo $rawText; // Output: This is an example of HTML text with tags and entities.
