@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raw Text Generator</title>
+</head>
+<body>
+    <h2>Raw Text Generator</h2>
+    <input type="text" id="text-input" placeholder="Enter text">
+    <button onclick="generateRawText()">Generate Raw Text</button>
+    <p id="raw-text"></p>
+
+    <script>
+        function generateRawText() {
+            const textInput = document.getElementById('text-input');
+            const textToProcess = textInput.value;
+
+            // Update URL with text parameter
+            const currentURL = window.location.href;
+            const updatedURL = new URL(currentURL);
+            updatedURL.searchParams.set('text', textToProcess);
+
+            // Redirect to updated URL
+            window.location.href = updatedURL.toString();
+        }
+    </script>
+</body>
+</html>
