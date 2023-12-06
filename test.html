@@ -20,8 +20,8 @@
             const updatedURL = new URL(currentURL);
             updatedURL.searchParams.set('text', textToProcess);
 
-            // Redirect to updated URL
-            window.location.href = updatedURL.toString();
+            // Replace current URL with updated URL
+            window.location.replace(updatedURL.toString());
         }
     </script>
 </body>
