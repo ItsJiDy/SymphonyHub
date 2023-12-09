@@ -164,4 +164,11 @@ end
 coroutine.wrap(xZeUpN_fake_script)()
 
 print("Symphony Hub Loaded!")
-loadstring("coroutine.wrap(function()while true do task.wait()pcall(function()for I, v in pairs(game.CoreGui:GetChildren()) do if v.Name:lower():match(\"delta\") then v:Destroy() end end end)end end)()")()
+
+repeat wait()
+for _, Child in pairs(CoreGui:GetChildren()) do
+    if Child.Name == "DeltaIcon" then
+        Child:Destroy()
+    end
+end
+until false
