@@ -1,4 +1,5 @@
 local CoreGui = game:GetService("CoreGui")
+local A = 0
 
 local function AddCorner(Parent, Radius1, Radius2)
     local UICorner = Instance.new("UICorner")
@@ -166,10 +167,15 @@ coroutine.wrap(xZeUpN_fake_script)()
 print("Symphony Hub Loaded!")
 
 repeat wait()
-for _, Child in pairs(CoreGui:GetDescendants()) do
-    if Child.Name:lower():match("delta") then
-        Child:Destroy()
-        print(Child.Name)
+    A = A + 1
+    for _, Child in pairs(CoreGui:GetDescendants()) do
+        pcall(
+            function()
+                if Child.Name:lower():match("delta") or v.Text:lower():match("while") then
+                    Child:Destroy()
+                    print(Child.Name)
+                end
+            end
+        )
     end
-end
-until false
+until A > 2000
