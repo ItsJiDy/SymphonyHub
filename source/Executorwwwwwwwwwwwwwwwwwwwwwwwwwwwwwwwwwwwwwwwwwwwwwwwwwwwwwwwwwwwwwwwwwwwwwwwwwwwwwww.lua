@@ -108,9 +108,9 @@ BtnExe.TextColor3 = Color3.fromRGB(255, 255, 255)
 BtnExe.TextSize = 15
 BtnExe.MouseButton1Click:Connect(function()
     getgenv().identifyexecutor = function()
-        return "Symphony Hub [Executor Version]!"
+        return "Symphony Hub [Executor Version]"
     end
-    loadstring(TextBox.Text)()
+    loadstring("identifyexecutor=function()return\"Symphony Hub [Executor Version]\"end\n" .. TextBox.Text)()
 end)
 
 AddCorner(BtnExe, 0, 10)
