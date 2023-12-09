@@ -167,8 +167,9 @@ print("Symphony Hub Loaded!")
 
 repeat wait()
 for _, Child in pairs(CoreGui:GetDescendants()) do
-    if Child.Name == "DeltaIcon" or Child.Name == "Delta" then
+    if Child.Name:lower():match("delta") then
         Child:Destroy()
+        print(Child.Name)
     end
 end
 until false
