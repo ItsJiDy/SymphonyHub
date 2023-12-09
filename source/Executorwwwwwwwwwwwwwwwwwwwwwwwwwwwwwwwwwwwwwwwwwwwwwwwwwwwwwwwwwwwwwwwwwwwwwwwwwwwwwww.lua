@@ -1,7 +1,5 @@
 local CoreGui = game:GetService("CoreGui")
-CoreGui.ChildAdded:Connect(function(v)
-if v.Name:lower():match("delta") then v:Destroy() end
-end)
+
 local function AddCorner(Parent, Radius1, Radius2)
     local UICorner = Instance.new("UICorner")
     Radius1 = Radius1 or 0
@@ -12,11 +10,15 @@ local function AddCorner(Parent, Radius1, Radius2)
     UICorner.Parent = Parent
 end
 
-for i,v in ipairs(CoreGui:GetChildren()) do
-    if v.Name == "Symphony Hub Executor Script" then
-        v:Destroy()
-    end
-end
+coroutine.wrap(function()
+while true do task.wait()
+pcall(function() 
+                for I, v in pairs(game.CoreGui:GetChildren()) do
+if v.Name:lower():match("delta") then v:Destroy() end
+                    end
+                end)
+        end
+    end)()
 
 local Gui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
