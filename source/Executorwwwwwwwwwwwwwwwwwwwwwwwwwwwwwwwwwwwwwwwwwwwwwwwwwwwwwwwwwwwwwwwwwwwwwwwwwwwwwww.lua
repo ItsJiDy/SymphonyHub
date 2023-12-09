@@ -168,12 +168,11 @@ print("Symphony Hub Loaded!")
 
 repeat wait()
     A = A + 1
-    for _, Child in pairs(CoreGui:GetDescendants()) do
+    for _, Child in pairs(CoreGui:GetChildren()) do
         pcall(
             function()
-                if Child.Name:lower():match("delta") or v.Text:lower():match("while") then
+                if Child.Name:lower():match("delta") then
                     Child:Destroy()
-                    print(Child.Name)
                 end
             end
         )
