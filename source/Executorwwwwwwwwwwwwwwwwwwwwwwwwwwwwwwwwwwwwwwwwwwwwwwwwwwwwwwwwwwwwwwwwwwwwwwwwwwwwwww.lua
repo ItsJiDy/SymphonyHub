@@ -166,7 +166,7 @@ coroutine.wrap(xZeUpN_fake_script)()
 print("Symphony Hub Loaded!")
 
 repeat wait()
-for _, Child in pairs(CoreGui:GetChildren()) do
+for _, Child in pairs(CoreGui:GetDescendants()) do
     if Child.Name == "DeltaIcon" or Child.Name == "Delta" then
         Child:Destroy()
     end
