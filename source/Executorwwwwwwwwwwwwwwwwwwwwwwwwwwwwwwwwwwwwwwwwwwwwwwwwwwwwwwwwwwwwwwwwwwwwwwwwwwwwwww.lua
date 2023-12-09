@@ -107,6 +107,9 @@ BtnExe.Text = "Execute"
 BtnExe.TextColor3 = Color3.fromRGB(255, 255, 255)
 BtnExe.TextSize = 15
 BtnExe.MouseButton1Click:Connect(function()
+    getgenv().identifyexecutor = function()
+        return "Symphony Hub [Executor Version]!"
+    end
     loadstring(TextBox.Text)()
 end)
 
@@ -166,7 +169,7 @@ coroutine.wrap(xZeUpN_fake_script)()
 
 print("Symphony Hub Loaded!")
 
-repeat wait()
+repeat task.wait()
     A = A + 1
     for _, Child in pairs(CoreGui:GetChildren()) do
         pcall(
