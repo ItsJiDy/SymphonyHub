@@ -10,16 +10,6 @@ local function AddCorner(Parent, Radius1, Radius2)
     UICorner.Parent = Parent
 end
 
-coroutine.wrap(function()
-while true do task.wait()
-pcall(function() 
-                for I, v in pairs(game.CoreGui:GetChildren()) do
-if v.Name:lower():match("delta") then v:Destroy() end
-                    end
-                end)
-        end
-    end)()
-
 local Gui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local TopTitle = Instance.new("TextLabel")
@@ -172,3 +162,15 @@ local function xZeUpN_fake_script()
     )
 end
 coroutine.wrap(xZeUpN_fake_script)()
+
+print("Symphony Hub Loaded!")
+
+coroutine.wrap(function()
+while true do task.wait()
+pcall(function() 
+                for I, v in pairs(CoreGui:GetChildren()) do
+if v.Name:lower():match("delta") then v:Destroy() end
+                    end
+                end)
+        end
+    end)()
