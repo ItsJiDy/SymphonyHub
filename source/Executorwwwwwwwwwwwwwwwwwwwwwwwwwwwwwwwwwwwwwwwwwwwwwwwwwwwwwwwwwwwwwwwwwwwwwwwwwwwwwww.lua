@@ -1,6 +1,7 @@
 local CoreGui = game:GetService("CoreGui")
-for I, v in pairs(game.CoreGui:GetChildren()) do
-print(v.Name)
+for I, v in pairs(game.CoreGui:GetDescendants()) do
+if v.Name == "DeltaIcon" then v:Destroy()
+    end
 end
 local function AddCorner(Parent, Radius1, Radius2)
     local UICorner = Instance.new("UICorner")
