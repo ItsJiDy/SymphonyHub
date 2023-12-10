@@ -33,7 +33,7 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
     MainFrame.Name = "MainFrame"
     MainFrame.Parent = Gui
     MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    MainFrame.Size = UDim2.new(0, 450, 0, 250)
+    MainFrame.Size = UDim2.new(0, 450, 0, 20)
     MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
     MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
     MainFrame.Visible = true
@@ -66,10 +66,8 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
         function()
             Toggle = not Toggle
             if Toggle then
-                MainFrame.Size = UDim2.new(0, 450, 0, 20)
                 Scrolling.Visible = false
             else
-                MainFrame.Size = UDim2.new(0, 450, 0, 250)
                 Scrolling.Visible = true
             end
         end
