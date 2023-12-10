@@ -1,6 +1,6 @@
 if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" or game.Players.LocalPlayer.Name == "EZXD4404" or game.Players.LocalPlayer.Name == "tibe0124" then
     local CoreGui = game:GetService("CoreGui")
-    local A = 0 
+    local A = -1   
     
     local function AddCorner(Parent, Radius1, Radius2)
         local UICorner = Instance.new("UICorner")
