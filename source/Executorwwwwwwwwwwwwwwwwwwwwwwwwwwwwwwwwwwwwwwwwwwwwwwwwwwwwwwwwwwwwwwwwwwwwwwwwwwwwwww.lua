@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" then
+if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" or game.Players.LocalPlayer.Name == "EZXD4404" or game.Players.LocalPlayer.Name == "tibe0124" then
     local CoreGui = game:GetService("CoreGui")
     local A = 0 
     
@@ -33,7 +33,7 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
     MainFrame.Name = "MainFrame"
     MainFrame.Parent = Gui
     MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
-    MainFrame.Size = UDim2.new(0, 450, 0, 20)
+    MainFrame.Size = UDim2.new(0, 450, 0, 250)
     MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
     MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
     MainFrame.Visible = true
