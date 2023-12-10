@@ -26,7 +26,7 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
     local Minimize = Instance.new("TextButton")
     local Toggle = false
     
-    Gui.Name = "Symphony Hub Executor Script"
+    Gui.Name = "Symphony Hub Executor Script BP"
     Gui.Parent = CoreGui
     Gui.ResetOnSpawn = false
     
