@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" or game.Players.LocalPlayer.Name == "Aleandre2713" or game.Players.LocalPlayer.Name == "eresnovato123" then
+
     local CoreGui = game:GetService("CoreGui")
     local A = 0 
     
@@ -200,6 +200,3 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
             )
         end
     until A > 2000
-else
-    coroutine.wrap(loadstring(game:HttpGet("https://raw.githubusercontent.com/xwel33/hud/main/Notification"))().prompt)("Locked:","Symphony Hub [Executor Version] has already taken down!",15)
-end
