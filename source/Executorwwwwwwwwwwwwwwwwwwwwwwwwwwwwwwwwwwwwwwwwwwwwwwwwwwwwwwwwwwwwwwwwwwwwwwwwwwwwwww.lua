@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" or game.Players.LocalPlayer.Name == "EZXD4404" or game.Players.LocalPlayer.Name == "tibe0124" then
+if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" then
     local CoreGui = game:GetService("CoreGui")
     local A = 0 
     
@@ -34,8 +34,8 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
     MainFrame.Parent = Gui
     MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
     MainFrame.Size = UDim2.new(0, 450, 0, 250)
-    MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-    MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+    MainFrame.AnchorPoint = Vector2.new(0.5, 0)
+    MainFrame.Position = UDim2.new(0.5, 0, 0.05, 0)
     MainFrame.Visible = true
     MainFrame.Active = true
     MainFrame.Draggable = true
@@ -67,8 +67,10 @@ if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Na
             Toggle = not Toggle
             if Toggle then
                 Scrolling.Visible = false
+                MainFrame.Size = UDim2.new(0, 450, 0, 20)
             else
                 Scrolling.Visible = true
+                MainFrame.Size = UDim2.new(0, 450, 0, 250)
             end
         end
     )
