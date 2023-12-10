@@ -19,9 +19,11 @@ local UIListLayout = Instance.new("UIListLayout")
 local TextBox = Instance.new("TextBox")
 local BtnFrame = Instance.new("Frame")
 local BtnExe = Instance.new("TextButton")
+local BtnClipboard = Instance.new("TextButton")
 local BtnClear = Instance.new("TextButton")
 local BtnCopy = Instance.new("TextButton")
-local OpenClose = Instance.new("ImageButton")
+local Minimize = Instance.new("TextButton")
+local Toggle = false
 
 Gui.Name = "Symphony Hub Executor Script"
 Gui.Parent = CoreGui
@@ -32,7 +34,6 @@ MainFrame.Parent = Gui
 MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 MainFrame.Size = UDim2.new(0, 450, 0, 250)
 MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
-MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MainFrame.Visible = true
 MainFrame.Active = true
 MainFrame.Draggable = true
@@ -48,6 +49,29 @@ TopTitle.Text = " • Symphony Hub [EXECUTOR]"
 TopTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 TopTitle.TextSize = 20
 TopTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+Minimize.Name = "Minimize"
+Minimize.Parent = TopTitle
+Minimize.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Minimize.BackgroundTransparency = 0.2
+Minimize.Position = UDim2.new(0.925, 0, 0, 0)
+Minimize.Size = UDim2.new(0, 20, 0, 20)
+Minimize.Font = Enum.Font.SourceSansBold
+Minimize.Text = "-"
+Minimize.TextColor3 = Color3.fromRGB(255, 255, 255)
+Minimize.TextSize = 15
+Minimize.MouseButton1Click:Connect(
+    function()
+        Toggle = not Toggle
+        if Toggle then
+            MainFrame.Size = UDim2.new(0, 450, 0, 20)
+            Scrolling.Visible = false
+        else
+            MainFrame.Size = UDim2.new(0, 450, 0, 250)
+            Scrolling.Visible = true
+        end
+    end
+)
 
 Scrolling.Name = "Scrolling"
 Scrolling.Parent = MainFrame
@@ -101,11 +125,11 @@ AddCorner(BtnFrame, 0, 15)
 BtnExe.Name = "Execute"
 BtnExe.Parent = BtnFrame
 BtnExe.BackgroundColor3 = Color3.fromRGB(220, 0, 220)
-BtnExe.Size = UDim2.new(0, 100, 0, 25)
-BtnExe.Position = UDim2.new(0.1, 0, 0.245, 0)
+BtnExe.Size = UDim2.new(0, 100, 0, 15)
+BtnExe.Position = UDim2.new(0.1, 0, 0.1, 0)
 BtnExe.Text = "Execute"
 BtnExe.TextColor3 = Color3.fromRGB(255, 255, 255)
-BtnExe.TextSize = 15
+BtnExe.TextSize = 12
 BtnExe.MouseButton1Click:Connect(function()
     getgenv().identifyexecutor = function()
         return "Symphony Hub [Executor Version]"
@@ -115,14 +139,31 @@ end)
 
 AddCorner(BtnExe, 0, 10)
 
+BtnClipboard.Name = "Execute Clipboard"
+BtnClipboard.Parent = BtnFrame
+BtnClipboard.BackgroundColor3 = Color3.fromRGB(220, 0, 220)
+BtnClipboard.Size = UDim2.new(0, 100, 0, 15)
+BtnClipboard.Position = UDim2.new(0.1, 0, 0.575, 0)
+BtnClipboard.Text = "Clipboard"
+BtnClipboard.TextColor3 = Color3.fromRGB(255, 255, 255)
+BtnClipboard.TextSize = 12
+BtnClipboard.MouseButton1Click:Connect(function()
+    getgenv().identifyexecutor = function()
+        return "Symphony Hub [Executor Version]"
+    end
+    loadstring("identifyexecutor=function()return\"Symphony Hub [Executor Version]\"end\n" .. getclipboard())()
+end)
+
+AddCorner(BtnClipboard, 0, 10)
+
 BtnClear.Name = "Clear"
 BtnClear.Parent = BtnFrame
 BtnClear.BackgroundColor3 = Color3.fromRGB(220, 0, 220)
-BtnClear.Size = UDim2.new(0, 100, 0, 25)
-BtnClear.Position = UDim2.new(0.4, 0, 0.245, 0)
+BtnClear.Size = UDim2.new(0, 100, 0, 15)
+BtnClear.Position = UDim2.new(0.7, 0, 0.1, 0)
 BtnClear.Text = "Clear"
 BtnClear.TextColor3 = Color3.fromRGB(255, 255, 255)
-BtnClear.TextSize = 15
+BtnClear.TextSize = 12
 BtnClear.MouseButton1Click:Connect(function()
     TextBox.Text = ""
 end)
@@ -132,40 +173,16 @@ AddCorner(BtnClear, 0, 10)
 BtnCopy.Name = "Copy"
 BtnCopy.Parent = BtnFrame
 BtnCopy.BackgroundColor3 = Color3.fromRGB(220, 0, 220)
-BtnCopy.Size = UDim2.new(0, 100, 0, 25)
-BtnCopy.Position = UDim2.new(0.7, 0, 0.245, 0)
+BtnCopy.Size = UDim2.new(0, 100, 0, 15)
+BtnCopy.Position = UDim2.new(0.7, 0, 0.575, 0)
 BtnCopy.Text = "Copy"
 BtnCopy.TextColor3 = Color3.fromRGB(255, 255, 255)
-BtnCopy.TextSize = 15
+BtnCopy.TextSize = 12
 BtnCopy.MouseButton1Click:Connect(function()
     setclipboard(TextBox.Text)
 end)
 
 AddCorner(BtnCopy, 0, 10)
-
-OpenClose.Name = "Script"
-OpenClose.Parent = Gui
-OpenClose.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-OpenClose.Position = UDim2.new(0, 0, 0.05, 0)
-OpenClose.Size = UDim2.new(0, 50, 0, 50)
-OpenClose.BackgroundTransparency = 1
-OpenClose.Image = "rbxassetid://3926305904"
-OpenClose.ImageColor3 = Color3.fromRGB(0, 128, 128)
-OpenClose.ImageRectOffset = Vector2.new(84, 204)
-OpenClose.ImageRectSize = Vector2.new(36, 36)
-OpenClose.ImageTransparency = 0
-OpenClose.Visible = true
-
-local function xZeUpN_fake_script()
-    local script = Instance.new("Script", OpenClose)
-
-    script.Parent.MouseButton1Click:Connect(
-        function()
-            MainFrame.Visible = not MainFrame.Visible
-        end
-    )
-end
-coroutine.wrap(xZeUpN_fake_script)()
 
 print("Symphony Hub Loaded!")
 
