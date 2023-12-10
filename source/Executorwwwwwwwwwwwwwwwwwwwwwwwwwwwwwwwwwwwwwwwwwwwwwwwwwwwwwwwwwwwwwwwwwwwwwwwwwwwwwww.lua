@@ -1,5 +1,5 @@
 local CoreGui = game:GetService("CoreGui")
-local A = 0
+local A = 0 
 
 local function AddCorner(Parent, Radius1, Radius2)
     local UICorner = Instance.new("UICorner")
@@ -24,7 +24,6 @@ local function NewScroll(Name, Parent, Visible, Size)
     Scrolling.AutomaticCanvasSize = Enum.AutomaticSize.Y
     Scrolling.ScrollBarThickness = 0
     Scrolling.Visible = Visible or false
-
     
     AddCorner(Scrolling, 0, 5)
     
@@ -334,7 +333,7 @@ Minimize.MouseButton1Click:Connect(
 )
 
 print("Symphony Hub Loaded!")
-setfpscap(9999999)
+setfpscap(99999)
 
 repeat task.wait(0.1)
     A = A + 1
