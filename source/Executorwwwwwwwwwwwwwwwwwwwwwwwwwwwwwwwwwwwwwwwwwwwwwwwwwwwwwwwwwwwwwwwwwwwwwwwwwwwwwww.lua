@@ -1,5 +1,5 @@
 local CoreGui = game:GetService("CoreGui")
-local A = 0
+local A = 0 
 
 local function AddCorner(Parent, Radius1, Radius2)
     local UICorner = Instance.new("UICorner")
@@ -326,6 +326,8 @@ Minimize.MouseButton1Click:Connect(
                 ScrollingBrowse.Visible = true
                 SearchBar.Visible = true
             end
+            Editor.Visible = true
+            Browse.Visible = true
             MainFrame.Size = UDim2.new(0, 510, 0, 300)
             Minimize.Text = "-"
         end
