@@ -102,6 +102,8 @@ Editor.MouseButton1Click:Connect(
         ScrollingBrowse.Visible = false
         CurrentTab = "Editor"
         SearchBar.Visible = false
+        Editor.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+        Browse.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
     end
 )
 
@@ -109,7 +111,7 @@ AddCorner(Editor, 0, 15)
 
 Browse.Name = "Browse"
 Browse.Parent = MainFrame
-Browse.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
+Browse.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Browse.Size = UDim2.new(0, 45, 0, 30)
 Browse.Position = UDim2.new(0.005, 0, 0.275, 0)
 Browse.Font = Enum.Font.SourceSansBold
@@ -122,6 +124,8 @@ Browse.MouseButton1Click:Connect(
         ScrollingBrowse.Visible = true
         CurrentTab = "Browse"
         SearchBar.Visible = true
+        Editor.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        Browse.BackgroundColor3 = Color3.fromRGB(0, 0, 255)
     end
 )
 
