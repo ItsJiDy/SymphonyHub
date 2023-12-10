@@ -33,6 +33,7 @@ MainFrame.Name = "MainFrame"
 MainFrame.Parent = Gui
 MainFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 MainFrame.Size = UDim2.new(0, 450, 0, 250)
+MianFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 MainFrame.Visible = true
 MainFrame.Active = true
