@@ -1,4 +1,4 @@
-if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" or game.Players.LocalPlayer.Name == "Aleandre2713" then
+if game.Players.LocalPlayer.UserId == 2645134467 and game.Players.LocalPlayer.Name == "sky129613" or game.Players.LocalPlayer.Name == "Aleandre2713" or game.Players.LocalPlayer.Name == "eresnovato123" then
     local CoreGui = game:GetService("CoreGui")
     local A = 0 
     
