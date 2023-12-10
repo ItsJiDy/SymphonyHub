@@ -334,7 +334,7 @@ Minimize.MouseButton1Click:Connect(
 )
 
 print("Symphony Hub Loaded!")
-setfpscap(60)
+setfpscap(9999999)
 
 repeat task.wait(0.1)
     A = A + 1
