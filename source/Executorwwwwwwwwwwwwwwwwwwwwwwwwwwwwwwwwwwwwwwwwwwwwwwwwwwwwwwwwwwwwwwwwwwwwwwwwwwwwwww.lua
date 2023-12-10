@@ -1,5 +1,5 @@
 local CoreGui = game:GetService("CoreGui")
-local A = -10 
+local A = 0
 
 local function AddCorner(Parent, Radius1, Radius2)
     local UICorner = Instance.new("UICorner")
