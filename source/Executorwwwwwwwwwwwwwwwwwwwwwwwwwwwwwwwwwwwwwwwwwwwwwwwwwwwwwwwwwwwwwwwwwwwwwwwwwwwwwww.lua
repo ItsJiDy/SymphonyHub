@@ -1,6 +1,6 @@
 repeat task.wait(0.1)
     A = A + 1
-    for _, Child in pairs(CoreGui:GetChildren()) do
+    for _, Child in pairs(game.CoreGui:GetChildren()) do
         pcall(
             function()
                 if Child.Name:lower():match("delta") then
