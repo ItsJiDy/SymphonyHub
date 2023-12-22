@@ -48,8 +48,7 @@
     }
     .link a {
       text-decoration: none;
-      background-color: rgb(20, 20, 20);
-      color: rgb(255, 255, 255);
+      color: rgb(0, 255, 0);
     }
     .link a:hover {
       text-decoration: underline;
@@ -86,6 +85,25 @@
 
 .whitespace {
   color: #eee;
+}
+.cool-button {
+  background-color: #4CAF50; /* Green background on initial state */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.4s ease-in-out; /* Smooth color transition */
+}
+
+.cool-button:hover {
+  background-color: #3e8e41; /* Darker green on hover */
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
 }
 
   </style>
@@ -124,13 +142,13 @@
     </div>
   </div>
   <p id="ray2">Buy</p>
-  There are only 1 ways to buy Premium!
+  There are only 1 way to buy Premium!
   <div class="links-container">
     <div class="link">
         <p id="ray2">Robux</p>
         <img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/old_robux.png" alt="Robux"></a>
         <p>💸 75 Robux (R$)</p>
-        <a href="https://discord.com/invite/qmKnDCxzKM">Buy Premium</a>
+        <a href="https://www.roblox.com/game-pass/22739804/Symphony-Hub-Premium"><button class="cool-button">Buy Premium!</button></a>
     </div>
   </div>
   <p id="ray2">Links</p>
