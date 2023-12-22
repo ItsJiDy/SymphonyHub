@@ -29,39 +29,7 @@
     .code {
       background-color: rgb(30,30,30);
       color: rgb(255,255,255);
-    }.tabs {
-  width: 100%;
-  overflow: hidden; /* Prevent content overflow on tab change */
-}
-
-.tab-list {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #f2f2f2;
-  border-bottom: 1px solid #ccc;
-}
-
-.tab {
-  padding: 15px 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out; /* Smooth color change on hover */
-}
-
-.tab.active {
-  background-color: #fff;
-}
-
-.tab-content {
-  display: none; /* Hide content by default */
-  padding: 15px;
-}
-
-.tab-pane.active {
-  display: block; /* Show active content */
-}
-
+    }
     .links-container {
       flex-wrap: wrap;
       justify-content: center;
@@ -132,6 +100,25 @@
   border-radius: 5px;
   transition: background-color 0.4s ease-in-out; /* Smooth color transition */
 }
+.animated-button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.4s ease-in-out;
+}
+
+.animated-button:hover {
+  background-color: #3e8e41;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 
 .cool-button:hover {
   background-color: #3e8e41; /* Darker green on hover */
@@ -140,18 +127,8 @@
 
   </style>
 </head>
-<body><div class="tabs">
-  <ul class="tab-list">
-    <li class="tab active">Tab 1</li>
-    <li class="tab">Tab 2</li>
-    <li class="tab">Tab 3</li>
-  </ul>
-  <div class="tab-content">
-    <div class="tab-pane active">Content for Tab 1</div>
-    <div class="tab-pane">Content for Tab 2</div>
-    <div class="tab-pane">Content for Tab 3</div>
-  </div>
-</div>
+<body><button class="animated-button">Hover to Animate</button>
+
 
   <p id="ray2">Symphony Hub</p>
   <img id="icon"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231222-140010_1.png" alt="Symphony Hub Photo">
@@ -209,16 +186,14 @@
     </div>
     </body>
 <script>
-const tabs = document.querySelectorAll('.tab');
-const tabContent = document.querySelectorAll('.tab-pane');
+const scrollLinks = document.querySelectorAll('.scroll-link');
 
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(tab => tab.classList.remove('active'));
-    tabContent.forEach(pane => pane.classList.remove('active'));
-    tab.classList.add('active');
-    const activeTabIndex = tabs.indexOf(tab);
-    tabContent[activeTabIndex].classList.add('active');
+scrollLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault();
+    const targetId = link.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    targetElement.scrollIntoView({ behavior: 'smooth' });
   });
 });
 
