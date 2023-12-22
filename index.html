@@ -29,7 +29,39 @@
     .code {
       background-color: rgb(30,30,30);
       color: rgb(255,255,255);
-    }
+    }.tabs {
+  width: 100%;
+  overflow: hidden; /* Prevent content overflow on tab change */
+}
+
+.tab-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab {
+  padding: 15px 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Smooth color change on hover */
+}
+
+.tab.active {
+  background-color: #fff;
+}
+
+.tab-content {
+  display: none; /* Hide content by default */
+  padding: 15px;
+}
+
+.tab-pane.active {
+  display: block; /* Show active content */
+}
+
     .links-container {
       flex-wrap: wrap;
       justify-content: center;
@@ -108,7 +140,19 @@
 
   </style>
 </head>
-<body>
+<body><div class="tabs">
+  <ul class="tab-list">
+    <li class="tab active">Tab 1</li>
+    <li class="tab">Tab 2</li>
+    <li class="tab">Tab 3</li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active">Content for Tab 1</div>
+    <div class="tab-pane">Content for Tab 2</div>
+    <div class="tab-pane">Content for Tab 3</div>
+  </div>
+</div>
+
   <p id="ray2">Symphony Hub</p>
   <img id="icon"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231222-140010_1.png" alt="Symphony Hub Photo">
   <a href="your-website-link.com"></a>
@@ -165,6 +209,19 @@
     </div>
     </body>
 <script>
+const tabs = document.querySelectorAll('.tab');
+const tabContent = document.querySelectorAll('.tab-pane');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(tab => tab.classList.remove('active'));
+    tabContent.forEach(pane => pane.classList.remove('active'));
+    tab.classList.add('active');
+    const activeTabIndex = tabs.indexOf(tab);
+    tabContent[activeTabIndex].classList.add('active');
+  });
+});
+
 function tokenizeText(text) {
   // Define regular expressions for Lua keywords, identifiers, numbers, strings, comments, and whitespace
   const keywordRegex = /[\w_]+/g;
