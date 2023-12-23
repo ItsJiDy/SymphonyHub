@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Symphony Hub Key System</title>
     <style>
         body {
@@ -37,6 +37,19 @@
             font-size: 15px;
             color: white;
         }
+        .login-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
+        }
     </style>
 </head>
 <body>
@@ -44,6 +57,7 @@
     <div class="login-container">
         <h1 class="login-title">Key System!</h1>
         <h1 class="login-b">You will be directed to the linkvertise in 5 seconds.</h1>
+        <a> <button class="login-button" onclick="alert('Join in our Discord Server, If you need help!'); window.open('https://discord.gg/symphonyhub');">Help</button> </a>
         </div>
         <script>
     const queryString = window.location.search;
