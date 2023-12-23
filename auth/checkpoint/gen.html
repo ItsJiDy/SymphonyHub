@@ -80,7 +80,7 @@ alert('Failed to generate your key, Please try again!');
 window.location.href = "https://itsjidy.github.io/SymphonyHub/"
 }else{
 document.getElementById("Key").value = key;
-localStorage.removeItem('key');
+localStorage.setItem('key', null);
 }
 </script>
 </body>
