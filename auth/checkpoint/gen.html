@@ -67,20 +67,20 @@
     <div class="login-container">
         <h1 class="login-title">Your Key...</h1>
         <input id="Key" type="text" class="login-textbox" placeholder="Key..." readonly>
-        <button onclick="copyText()" class="login-button">Copy!</button>
+        <button id="button"class="login-button">Copy!</button>
     </div>
         <script>
 const key = localStorage.getItem("key");
-function copyText() {
-  navigator.clipboard.writeText(key);
-  alert('Copied to Clipboard!');
+document.getElementById("button").onclick = () => {
+document.getElementById("button").innerText = "Copied!"
+  navigator.clipboard.writeText("r");
 }
 if (key == '' || key == null) {
 alert('Failed to generate your key, Please try again!');
 window.location.href = "https://itsjidy.github.io/SymphonyHub/"
 }else{
 document.getElementById("Key").value = key;
-localStorage.setItem('key', null);
+localStorage.setItem('key', '');
 }
 </script>
 </body>
