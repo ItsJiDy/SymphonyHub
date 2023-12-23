@@ -16,11 +16,12 @@
     }
     return h
 }
-const token = localStorage.getItem("token")
+const token = sessionStorage.getItem("token")
 if (token == '' || token == null) {
 alert('Failed to generate your key, Please try again!');
 }else{
-localStorage.setItem('key', 'SymphonyHub_' + toHex(token));
+sessionStorage.setItem('key', 'SymphonyHub_' + toHex(token));
+sessionStorage.removeItem('token');
 window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/gen"
 }
   </script>

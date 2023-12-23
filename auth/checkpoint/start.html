@@ -53,7 +53,8 @@ if (token == '' || token == null) {
     alert('The link you got might be invalid, Please try again.');
     } else {
     setTimeout(function() {
-    localStorage.setItem('token', token);
+    sessionStorage.setItem('token', token);
+    
       window.location.href = "https://link-hub.net/978899/symphony-hub"
     }, 5000);
 }
