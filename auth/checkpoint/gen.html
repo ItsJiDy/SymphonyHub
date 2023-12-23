@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphony Hub Key System</title>
+    <style>
+        body {
+            background-image: url("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231223-000435.png");
+            text-align: center;
+            background-color: rgb(15, 15, 15);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .title {
+            font-size: 36px;
+            margin-top: 50px;
+            color: white;
+        }
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
+        }
+        .login-textbox {
+            width: 90%;
+            color: white;
+            background-color: blue;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-clip: padding-box;
+            border-radius: 15px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
+        }
+        .login-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .login-b {
+            font-size: 15px;
+            color: white;
+        }
+        .login-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 15px;
+            margin-top: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">Symphony Hub</h1>
+    <div class="login-container">
+        <h1 class="login-title">Your Key...</h1>
+        <input id="Key" type="text" class="login-textbox" placeholder="Key..." readonly>
+        <button onclick="copyText()" class="login-button">Copy!</button>
+    </div>
+        <script>
+const key = localStorage.getItem("key");
+if (key == '' || key == null) {
+alert('Failed to generate your key, Please try again!');
+window.location.href = "https://itsjidy.github.io/SymphonyHub/"
+}else{
+document.getElementById("Key").value = key;
+}
+function copyText() {
+  navigator.clipboard.writeText(key);
+  alert('Copied to Clipboard!');
+}
+</script>
+</body>
+</html>

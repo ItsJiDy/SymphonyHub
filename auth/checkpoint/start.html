@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symphony Hub Key System</title>
+    <style>
+        body {
+            background-image: url("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231223-000435.png");
+            text-align: center;
+            background-color: rgb(15, 15, 15);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .title {
+            font-size: 36px;
+            margin-top: 50px;
+            color: white;
+        }
+        .login-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
+        }
+        .login-title {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .login-b {
+            font-size: 15px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h1 class="title">Symphony Hub</h1>
+    <div class="login-container">
+        <h1 class="login-title">Key System!</h1>
+        <h1 class="login-b">You will be directed to the linkvertise in 5 seconds.</h1>
+        </div>
+        <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+const token = urlParams.get('tokenId');
+if (token == '' || token == null) {
+    alert('The link you got might be invalid, Please try again.');
+    } else {
+    setTimeout(function() {
+    localStorage.setItem('token', token);
+      window.location.href = "https://link-hub.net/978899/symphony-hub"
+    }, 5000);
+}
+</script>
+</body>
+</html>
