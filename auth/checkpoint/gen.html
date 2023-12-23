@@ -71,15 +71,15 @@
     </div>
         <script>
 const key = localStorage.getItem("key");
+function copyText() {
+  navigator.clipboard.writeText(localStorage.getItem("key"));
+  alert('Copied to Clipboard!');
+}
 if (key == '' || key == null) {
 alert('Failed to generate your key, Please try again!');
 window.location.href = "https://itsjidy.github.io/SymphonyHub/"
 }else{
 document.getElementById("Key").value = key;
-}
-function copyText() {
-  navigator.clipboard.writeText(key);
-  alert('Copied to Clipboard!');
 }
 </script>
 </body>
