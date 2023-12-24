@@ -38,19 +38,11 @@
             font-size: 15px;
             color: white;
         }
-        .login-button {
-            background-color: #4CAF50; /* Green */
-            border: none;
-            color: white;
-            padding: 10px 15px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            border-radius: 15px;
-            margin-top: 5px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
-        }
+        #iconoff{
+                width: 50px;
+                height: 50px;
+                color: rgb(255, 255, 255);
+            }
     </style>
 </head>
 <body>
@@ -58,7 +50,7 @@
     <div class="login-container">
         <h1 class="login-title">Key System!</h1>
         <h1 id="env" class="login-b">You will be directed to the Work.Ink Site in 5 seconds.</h1>
-        <a> <button class="login-button" onclick="alert('Join in our Discord Server, and DM @elfandtears_ndk If you need help!'); window.open('https://discord.gg/symphonyhub');">Help</button> </a>
+        <img onclick="alert('Join in our Discord Server, and DM @elfandtears_ndk If you need help!'); window.open('https://discord.gg/symphonyhub');" id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Discord_animated_logo.gif" alt="Discord">
         </div>
         <script>
     const queryString = window.location.search;

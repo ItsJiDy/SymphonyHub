@@ -64,6 +64,11 @@
                 margin-top: 10px;
                 box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adjust shadow for better visibility on black background */
             }
+            #iconoff{
+                width: 50px;
+                height: 50px;
+                color: rgb(255, 255, 255);
+            }
         </style>
     </head>
     
@@ -75,9 +80,9 @@
              <h1 class="login-title">Your Key...</h1>
              <a>Thanks for using Symphony Hub and Merry Christmas!</a>
              <h1></h1>
-            <input id="Key" type="text" class="login-textbox" placeholder="Key..."
-            readonly>
+            <input id="Key" type="text" class="login-textbox" placeholder="Key..." readonly>
             <button id="button" class="login-button">Copy!</button>
+            <a href="https://discord.com/invite/qmKnDCxzKM"><img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Discord_animated_logo.gif" alt="Discord"></a>
         </div>
         <script>
             const key = localStorage.getItem("key");
