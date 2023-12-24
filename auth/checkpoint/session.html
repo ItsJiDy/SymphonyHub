@@ -1,39 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkpoint Final!</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Untitled12_20231223141213.png" type="image/x-icon">
-</head>
-<body>
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkpoint Final!</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Untitled12_20231223141213.png"
+        type="image/x-icon">
+    </head>
+    
+    <body>
+        <script>
+            function toHex(s) {
+                // utf8 to latin1
+                var s = unescape(encodeURIComponent(s))
+                var h = ''
+                for (var i = 0; i < s.length; i++) {
+                    h += s.charCodeAt(i).toString(16)
+                }
+                return h
+            }
+            if (document.referrer == "https://work.ink/") {
+            const token = localStorage.getItem("token")
+            if (token == '' || token == null) {
+            alert('Failed to generate your key, Please proceed to the start again!');
+            window.location.href = "https://itsjidy.github.io/SymphonyHub/";
+            }else{
+            localStorage.setItem('key', 'SymphonyHub_' + toHex(token));
+            localStorage.setItem('token', null);
+            if (localStorage.getItem('key') == 'SymphonyHub_6e756c6c') {
+            alert('Failed to generate your key, Please proceed to the start again!');
+            window.location.href = "https://itsjidy.github.io/SymphonyHub/";
+            } else {
+            window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/gen"
+            }
+            }
+            } else {
+            window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/detected"
+            }
+        </script>
+    </body>
 
-  <script>
-  function toHex(s) {
-    // utf8 to latin1
-    var s = unescape(encodeURIComponent(s))
-    var h = ''
-    for (var i = 0; i < s.length; i++) {
-        h += s.charCodeAt(i).toString(16)
-    }
-    return h
-}
-if (document.referrer == "https://work.ink/") {
-const token = localStorage.getItem("token")
-if (token == '' || token == null) {
-alert('Failed to generate your key, Please proceed to the start again!');
-}else{
-localStorage.setItem('key', 'SymphonyHub_' + toHex(token));
-localStorage.setItem('token', null);
-if (localStorage.getItem('key') == 'SymphonyHub_6e756c6c') {
-alert('Failed to generate your key, Please proceed to the start again!');
-} else {
-window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/gen"
-}
-}
-} else {
-window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/detected"
-}
-  </script>
-</body>
 </html>

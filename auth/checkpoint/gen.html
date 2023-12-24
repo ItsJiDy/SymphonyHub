@@ -71,31 +71,36 @@
             }
         </style>
     </head>
+    
 <h1 class="title">Symphony Hub</h1>
 
-        <div class="login-container">
-             <h1 class="login-title">Your Key...</h1>
-             <a>Thanks for using Symphony Hub and Merry Christmas!</a>
-             <h1></h1>
-            <input id="Key" type="text" class="login-textbox" placeholder="Key..." readonly>
-            <button id="button" class="login-button">Copy!</button>
-            <h1></h1>
-            <a href="https://discord.com/invite/qmKnDCxzKM"><img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Discord_animated_logo.gif" alt="Discord"></a>
-        </div>
-        <script>
-const key = localStorage.getItem('key');
-if (key == '' || key == null) {
-alert('Failed to generate your key, Please proceed to the start again!');
-window.location.href = "https://itsjidy.github.io/SymphonyHub/";
-} else {
-document.getElementById("Key").value = key;
-document.getElementById("button").onclick = () => {
-document.getElementById("button").innerText = "Copied!"
-document.clipboard.write(key);
-}
-localStorage.setItem('key', '');
-}
-</script>
+    <div class="login-container">
+         <h1 class="login-title">Your Key...</h1>
+ <a>Thanks for using Symphony Hub and Merry Christmas!</a>
+
+         <h1></h1>
+
+        <input id="Key" type="text" class="login-textbox" placeholder="Key..."
+        readonly>
+        <button id="button" class="login-button">Copy!</button>
+         <h1></h1>
+ <a href="https://discord.com/invite/qmKnDCxzKM"><img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Discord_animated_logo.gif" alt="Discord"></a>
+
+    </div>
+    <script>
+        const key = localStorage.getItem('key');
+        if (key == '' || key == null) {
+        alert('Failed to generate your key, Please proceed to the start again!');
+        window.location.href = "https://itsjidy.github.io/SymphonyHub/";
+        } else {
+        document.getElementById("Key").value = key;
+        document.getElementById("button").onclick = () => {
+        document.getElementById("button").innerText = "Copied!"
+        document.clipboard.writeText(key);
+        }
+        localStorage.setItem('key', '');
+        }
+    </script>
     </body>
 
 </html>
