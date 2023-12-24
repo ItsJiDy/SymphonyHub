@@ -96,7 +96,7 @@
         document.getElementById("Key").value = key;
         document.getElementById("button").onclick = () => {
         document.getElementById("button").innerText = "Copied!"
-        document.clipboard.writeText(key);
+        document.navigator.writeText(key);
         }
         localStorage.setItem('key', '');
         }
