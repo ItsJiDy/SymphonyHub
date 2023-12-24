@@ -90,6 +90,7 @@ alert('Failed to generate your key, Please proceed to the start again!');
 window.location.href = "https://itsjidy.github.io/SymphonyHub/";
 } else {
 document.getElementById("Key").value = key;
+localStorage.setItem('key', '');
 }
 </script>
     </body>
