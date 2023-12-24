@@ -15,6 +15,20 @@
             background-repeat: no-repeat;
             background-size: 100%;color: white;
         }
+          #snowflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+  }  .snowflake {
+    position: fixed;
+    user-select: none;
+    z-index: 1000;
+    pointer-events: none;
+    border-radius: 0%;
+    width: 10px;
+    height: 10px;
+  }
             #ray{font-size:16px;line-height:24px;font-family:monospace;color: white;}
             #ray2{font-size:30px;
             justify-content: center;color: white;
@@ -132,7 +146,9 @@
         </style>
     </head>
     
-    <body>
+    <body><div id="snowflakeContainer">
+  <span class="snowflake">❄️</span>
+</div>
         <div class="tab">
             
 <h2>Symphony Hub</h2>
@@ -202,79 +218,142 @@
                 </div>
     </body>
     <script>
-        function tokenizeText(text) {
-          // Define regular expressions for Lua keywords, identifiers, numbers, strings, comments, and whitespace
-          const keywordRegex = /[\w_]+/g;
-          const identifierRegex = /[\w_]+/g;
-          const numberRegex = /[\d.]+/g;
-          const stringRegex = /"[^"]*"/g;
-          const commentRegex = /--.*\n|\/\/.*\n/g;
-          const whitespaceRegex = /\s+/g;
-        
-          // Split the text into tokens based on the regular expressions
-          const tokens = [];
-          let match;
-          while ((match = keywordRegex.exec(text)) || (match = identifierRegex.exec(text)) || (match = numberRegex.exec(text)) || (match = stringRegex.exec(text)) || (match = commentRegex.exec(text)) || (match = whitespaceRegex.exec(text))) {
-            tokens.push({
-              type: getTokenType(match[0]),
-              value: match[0],
-              index: match.index,
-              length: match[0].length
-            });
-            text = text.substring(match.index + match[0].length);
-          }
-        
-          // Add remaining whitespace tokens
-          if (text.length) {
-            tokens.push({
-              type: 'whitespace',
-              value: text,
-              index: text.length,
-              length: text.length
-            });
-          }
-        
-          return tokens;
-        }
-        function getCssClass(tokenType) {
-          switch (tokenType) {
-            case 'keyword':
-              return 'keyword';
-            case 'identifier':
-              return 'identifier';
-            case 'number':
-              return 'number';
-            case 'string':
-              return 'string';
-            case 'comment':
-              return 'comment';
-            case 'whitespace':
-              return 'whitespace';
-            default:
-              return '';
-          }
-        }
-        function highlightText(text) {
-          // Get the textarea element
-          const textarea = document.getElementById('myTextarea');
-        
-          // Tokenize the text
-          const tokens = tokenizeText(text);
-        
-          // Create a span element for each token
-          let highlightedText = '';
-          for (const token of tokens) {
-            highlightedText += `<span class="${getCssClass(token.type)}">${token.value}</span>`;
-          }
-        
-          // Replace the original text with the highlighted text
-          textarea.innerHTML = highlightedText;
-        }
-        const textarea = document.getElementById('myTextarea');
-        textarea.addEventListener('input', () => {
-          const text = textarea.value;
-          highlightText(text);
-        });
+  let snowflakes = [];
+  let browserWidth;
+  let browserHeight;
+  let numberOfSnowflakes = 50;
+  let resetPosition = false;
+  let enableAnimations = false;
+  let reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+
+  function setAccessibilityState() {
+    if (reduceMotionQuery.matches) {
+      enableAnimations = false;
+    } else {
+      enableAnimations = true;
+    }
+  }
+  setAccessibilityState();
+
+  reduceMotionQuery.addListener(setAccessibilityState);
+
+  function setup() {
+    if (enableAnimations) {
+      window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+      window.addEventListener("resize", setResetFlag, false);
+    }
+  }
+  setup();
+
+  class Snowflake {
+    constructor(element, speed, xPos, yPos) {
+      this.element = element;
+      this.speed = speed;
+      this.xPos = xPos;
+      this.yPos = yPos;
+      this.scale = 1;
+
+      this.counter = 0;
+      this.sign = Math.random() < 0.5 ? 1 : -1;
+
+    }
+
+    update(delta) {
+      this.counter += (this.speed / 5000) * delta;
+      this.xPos += (this.sign * delta * this.speed * Math.cos(this.counter)) / 40;
+      this.yPos += Math.sin(this.counter) / 40 + (this.speed * delta) / 30;
+      this.scale = 0.5 + Math.abs((10 * Math.cos(this.counter)) / 20);
+
+      setTransform(
+        Math.round(this.xPos),
+        Math.round(this.yPos),
+        this.scale,
+        this.element
+      );
+
+      if (this.yPos > browserHeight) {
+        this.yPos = -50;
+      }
+    }
+  }
+
+  function setTransform(xPos, yPos, scale, el) {
+    el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+  }
+
+  function generateSnowflakes() {
+    let originalSnowflake = document.querySelector(".snowflake");
+
+    let snowflakeContainer = originalSnowflake.parentNode;
+    snowflakeContainer.style.display = "block";
+
+    browserWidth = document.documentElement.clientWidth;
+    browserHeight = document.documentElement.clientHeight;
+
+    for (let i = 0; i < numberOfSnowflakes; i++) {
+      let snowflakeClone = originalSnowflake.cloneNode(true);
+      snowflakeContainer.appendChild(snowflakeClone);
+
+      let initialXPos = getPosition(50, browserWidth);
+      let initialYPos = getPosition(50, browserHeight);
+      let speed = (5 + Math.random() * 40) * delta;
+
+      let snowflakeObject = new Snowflake(
+        snowflakeClone,
+        speed,
+        initialXPos,
+        initialYPos
+      );
+      snowflakes.push(snowflakeObject);
+    }
+
+    snowflakeContainer.removeChild(originalSnowflake);
+
+    requestAnimationFrame(moveSnowflakes);
+  }
+
+  let frames_per_second = 60;
+  let frame_interval = 1000 / frames_per_second;
+
+  let previousTime = performance.now();
+  let delta = 1;
+
+  function moveSnowflakes(currentTime) {
+    delta = (currentTime - previousTime) / frame_interval;
+
+    if (enableAnimations) {
+      for (let i = 0; i < snowflakes.length; i++) {
+        let snowflake = snowflakes[i];
+        snowflake.update(delta);
+      }
+    }
+
+    previousTime = currentTime;
+
+    if (resetPosition) {
+      browserWidth = document.documentElement.clientWidth;
+      browserHeight = document.documentElement.clientHeight;
+
+      for (let i = 0; i < snowflakes.length; i++) {
+        let snowflake = snowflakes[i];
+
+        snowflake.xPos = getPosition(50, browserWidth);
+        snowflake.yPos = getPosition(50, browserHeight);
+      }
+
+      resetPosition = false;
+    }
+
+    requestAnimationFrame(moveSnowflakes);
+  }
+
+  function getPosition(offset, size) {
+    return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+  }
+  
+  function setResetFlag(e) {
+    resetPosition = true;
+  }
     </script>
 
 </html>
