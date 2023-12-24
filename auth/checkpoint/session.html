@@ -8,7 +8,8 @@
 </head>
 <body>
 
-  <script>function toHex(s) {
+  <script>
+  function toHex(s) {
     // utf8 to latin1
     var s = unescape(encodeURIComponent(s))
     var h = ''
@@ -17,6 +18,7 @@
     }
     return h
 }
+if (document.referrer == "https://work.ink/") {
 const token = localStorage.getItem("token")
 if (token == '' || token == null) {
 alert('Failed to generate your key, Please try again!');
@@ -24,6 +26,9 @@ alert('Failed to generate your key, Please try again!');
 localStorage.setItem('key', 'SymphonyHub_' + toHex(token));
 localStorage.setItem('token', null);
 window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/gen"
+}
+} else {
+window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/detected"
 }
   </script>
 </body>
