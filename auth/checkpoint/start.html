@@ -57,7 +57,7 @@
 <h1 class="title">Symphony Hub</h1>
     <div class="login-container">
         <h1 class="login-title">Key System!</h1>
-        <h1 class="login-b">You will be directed to the Work.Ink Site in 5 seconds.</h1>
+        <h1 id="env" class="login-b">You will be directed to the Work.Ink Site in 5 seconds.</h1>
         <a> <button class="login-button" onclick="alert('Join in our Discord Server, and DM @elfandtears_ndk If you need help!'); window.open('https://discord.gg/symphonyhub');">Help</button> </a>
         </div>
         <script>
@@ -65,7 +65,8 @@
     const urlParams = new URLSearchParams(queryString);
 const token = urlParams.get('tokenId');
 if (token == '' || token == null) {
-    alert('The link you got might be invalid, Please try again.');
+    document.getElementById("env").innerText = "404: Invalid Token ID.";
+    alert('The link you got seems to be invalid, Please try again.');
     } else {
     setTimeout(function() {
     localStorage.setItem('token', token);
