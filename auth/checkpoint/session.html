@@ -21,11 +21,15 @@
 if (document.referrer == "https://work.ink/") {
 const token = localStorage.getItem("token")
 if (token == '' || token == null) {
-alert('Failed to generate your key, Please try again!');
+alert('Failed to generate your key, Please proceed to the start again!');
 }else{
 localStorage.setItem('key', 'SymphonyHub_' + toHex(token));
 localStorage.setItem('token', null);
+if (localStorage.getItem('key') == 'SymphonyHub_6e756c6c') {
+alert('Failed to generate your key, Please proceed to the start again!');
+} else {
 window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/gen"
+}
 }
 } else {
 window.location.href = "https://itsjidy.github.io/SymphonyHub/auth/checkpoint/detected"
