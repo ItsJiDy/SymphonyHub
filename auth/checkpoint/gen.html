@@ -84,8 +84,13 @@
         </div><div id="snowflakeContainer">
   <span class="snowflake">❄️</span>
 </div><script>
-
-document.getElementById("Key").value = localStorage.getItem('key')
+const key = localStorage.getItem('key');
+if (key == '' || key == null) {
+alert('Failed to generate your key, Please proceed to the start again!');
+window.location.href = "https://itsjidy.github.io/SymphonyHub/";
+} else {
+document.getElementById("Key").value = key;
+}
 </script>
     </body>
 
