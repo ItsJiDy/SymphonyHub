@@ -8,9 +8,19 @@
         <link rel="icon" href="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Untitled12_20231223141213.png"
         type="image/x-icon">
         <style>
-            #ray{font-size:16px;line-height:24px;font-family:monospace;}
+        body {
+            background-image: url("https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231223-000435.png");
+            text-align: center;
+            background-color: rgb(15, 15, 15);
+            background-repeat: no-repeat;
+            background-size: cover;color: white;
+        }
+            #ray{font-size:16px;line-height:24px;font-family:monospace;color: white;}
             #ray2{font-size:30px;
-            justify-content: center;
+            justify-content: center;color: white;
+            }
+            #ray3{
+            color: white;
             }
             div {
           position: relative;
@@ -18,10 +28,14 @@
           animation-fill-mode: forwards;
         }
             #icon{
-                width: 100%;
+                width: 50%;
                 height: 300px;
                 color: rgb(255, 255, 255);
                 animation-timing-function: ease;
+                padding: 5px;
+            top: 0%;
+            left: -50%;
+            padding: 20px;transform: translate(40%, 0%);
             }
             #iconoff{
                 width: 50px;
@@ -29,20 +43,12 @@
                 color: rgb(255, 255, 255);
             }
             #ease {animation-timing-function: ease;}
-            body {
-              font-family: sans-serif;
-              margin: 0;
-              padding: 20px;
-              color: rgb(255, 255, 255);
-              background-color: rgb(20, 20, 20);
-            }
             .code {
               background-color: rgb(30,30,30);
               color: rgb(255,255,255);
             }.tab {
           overflow: hidden;
           border: 0px solid #ccc;
-          background-color: black;
           
           
         }
@@ -60,7 +66,6 @@
               border-radius: 15px;
               text-align: center;
               
-              background-color: rgb(0, 0, 200);
             }
             .link a {
               text-decoration: none;
@@ -134,15 +139,15 @@
 <h2>Symphony Hub</h2>
 
         </div>
-        <div id="ease" class="links-container">
+        
             <img id="icon" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231222-140010_1.png"
-            alt="Symphony Hub Photo">
+            alt="Symphony Hub Photo"><div id="ease" class="links-container">
             <div class="link">
                 <p id="ray2">Games</p>
                 <img id="iconoff" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/686589-6c7d7df5.png"
                 alt="Games">
                 </a>
-                <p>Symphony Hub only supports 2 Roblox Games such as Murder Mystery 2 and
+                <p style="ray3">Symphony Hub only supports 2 Roblox Games such as Murder Mystery 2 and
                     Blade Ball only.</p>
             </div>
             <p id="ray2">Premium</p>
@@ -189,7 +194,7 @@
                     class="contact-info">
                          <h3></h3>
 
-                        <p>Developer: Elf and Tears (@elfandtears_ndk)</p>
+                        <p style="ray3">Developer: Elf and Tears (@elfandtears_ndk)</p>
                         <p>Discord Assistant: B3AR (@zixos_synto900)</p>
                          <h3></h3>
 
