@@ -1,244 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Synphony Hub</title>
-  <link rel="icon" href="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Untitled12_20231223141213.png" type="image/x-icon">
-  <style>
-    #ray{font-size:16px;line-height:24px;font-family:monospace;}
-    #ray2{font-size:30px;
-    justify-content: center;
-    }
-    #icon{
-        width: 100%;
-        height: 300px;
-        color: rgb(255, 255, 255);
-    }
-    #iconoff{
-        width: 50px;
-        height: 50px;
-        color: rgb(255, 255, 255);
-    }
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 20px;
-      color: rgb(255, 255, 255);
-      background-color: rgb(20, 20, 20);
-    }
-    .code {
-      background-color: rgb(30,30,30);
-      color: rgb(255,255,255);
-    }
-    .links-container {
-      flex-wrap: wrap;
-      justify-content: center;
-      width: 100%;
-      margin: 0 auto;
-      padding: 5px;
-    }
-    .link {
-      margin: 5px;
-      padding: 15px;
-      border: 1px solid #ddd;
-      border-radius: 15px;
-      text-align: center;
-      
-      background-color: rgb(0, 0, 200);
-    }
-    .link a {
-      text-decoration: none;
-      color: rgb(0, 255, 0);
-    }
-    .link a:hover {
-      text-decoration: underline;
-    }
-    .contact-info {
-      margin-top: 40px;
-      text-align: center;
-    }
-    .contact-info h3 {
-      margin-bottom: 10px;
-    }
-    .contact-info p {
-      margin: 0;
-    }
-    .keyword {
-  color: #f00;
-}
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Synphony Hub</title>
+        <link rel="icon" href="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Untitled12_20231223141213.png"
+        type="image/x-icon">
+        <style>
+            #ray{font-size:16px;line-height:24px;font-family:monospace;}
+            #ray2{font-size:30px;
+            justify-content: center;
+            }
+            div {
+          position: relative;
+          animation: mymove 1s;
+          animation-fill-mode: forwards;
+        }
+            #icon{
+                width: 100%;
+                height: 300px;
+                color: rgb(255, 255, 255);
+                animation-timing-function: ease;
+            }
+            #iconoff{
+                width: 50px;
+                height: 50px;
+                color: rgb(255, 255, 255);
+            }
+            #ease {animation-timing-function: ease;}
+            body {
+              font-family: sans-serif;
+              margin: 0;
+              padding: 20px;
+              color: rgb(255, 255, 255);
+              background-color: rgb(20, 20, 20);
+            }
+            .code {
+              background-color: rgb(30,30,30);
+              color: rgb(255,255,255);
+            }.tab {
+          overflow: hidden;
+          border: 0px solid #ccc;
+          background-color: black;
+          
+          
+        }
+            .links-container {
+              flex-wrap: wrap;
+              justify-content: center;
+              width: 100%;
+              margin: 0 auto;
+              padding: 5px;
+            }
+            .link {
+              margin: 5px;
+              padding: 15px;
+              border: 1px solid #ddd;
+              border-radius: 15px;
+              text-align: center;
+              
+              background-color: rgb(0, 0, 200);
+            }
+            .link a {
+              text-decoration: none;
+              color: rgb(0, 255, 0);
+            }
+            .link a:hover {
+              text-decoration: underline;
+            }
+        @keyframes mymove {
+          from {left: -100px;}
+          to {left: 0px;}
+        }
+            .contact-info {
+              margin-top: 40px;
+              text-align: center;
+            }
+            .contact-info h3 {
+              margin-bottom: 10px;
+            }
+            .contact-info p {
+              margin: 0;
+            }
+            .keyword {
+          color: #f00;
+        }
+        
+        .identifier {
+          color: #000;
+        }
+        
+        .number {
+          color: #00f;
+        }
+        
+        .string {
+          color: #0f0;
+        }
+        
+        .comment {
+          color: #ccc;
+        }
+        
+        .whitespace {
+          color: #eee;
+        }
+        .cool-button {
+          background-color: #4CAF50; /* Green background on initial state */
+          border: none;
+          color: white;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: background-color 0.4s ease-in-out; /* Smooth color transition */
+        }
+        
+        .cool-button:hover {
+          background-color: #3e8e41; /* Darker green on hover */
+          box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
+        }
+        </style>
+    </head>
+    
+    <body>
+        <div class="tab">
+            
+<h2>Symphony Hub</h2>
 
-.identifier {
-  color: #000;
-}
+        </div>
+        <div id="ease" class="links-container">
+            <img id="icon" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231222-140010_1.png"
+            alt="Symphony Hub Photo">
+            <div class="link">
+                <p id="ray2">Games</p>
+                <img id="iconoff" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/686589-6c7d7df5.png"
+                alt="Games">
+                </a>
+                <p>Symphony Hub only supports 2 Roblox Games such as Murder Mystery 2 and
+                    Blade Ball only.</p>
+            </div>
+            <p id="ray2">Premium</p>
+            <div class="link">
+                <p id="ray2">Common Perks</p>
+                <img id="iconoff" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/role_manager.png"
+                alt="Premium">
+                </a>
+                <p>This will gives you Permanent Keyless and you will Unlocked the Premium
+                    Tab.</p>
+            </div>
+            </div>
+            <div class="links-container">
+                <div class="link">
+                    <p id="ray2">Global Chat Perks</p>
+                    <img id="iconoff" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/589708-59e8a8b1.png"
+                    alt="Global Chat">
+                    </a>
+                    <p>Symphony's Premium will gives you Premium Rank at Global Chat.</p>
+                </div>
+                <div class="link">
+                    <p id="ray2">Discord Perks</p>
+                    <img id="iconoff" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/discord_aestheticlogo.png"
+                    alt="Discord">
+                    </a>
+                    <p>Get the Premium Role and 5x chance of winning in any giveaways.</p>
+                </div>
+            <p id="ray2">Buy</p>There are only 1 way to buy Premium!
+            <div class="link">
+                <p id="ray2">Robux</p>
+                <img id="iconoff" src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/old_robux.png"
+                alt="Robux">
+                </a>
+                <p>💸 75 Robux (R$)</p> <a href="https://www.roblox.com/game-pass/22739804/Symphony-Hub-Premium"><button class="cool-button">Buy Premium!</button></a>
 
-.number {
-  color: #00f;
-}
+            </div>
+            </div>
+            <div id="ease" class="links-container">
+                <p id="ray2">Links</p>
+                <div class="link">
+                    <p id="ray2">Officials</p> <a href="https://discord.com/invite/qmKnDCxzKM"><img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/kisspng-discord-computer-icons-android-challenge-5ad920f517ddb6.2835550815241791890978.png" alt="Discord"></a>
 
-.string {
-  color: #0f0;
-}
+                    <div
+                    class="contact-info">
+                         <h3></h3>
 
-.comment {
-  color: #ccc;
-}
+                        <p>Developer: Elf and Tears (@elfandtears_ndk)</p>
+                        <p>Discord Assistant: B3AR (@zixos_synto900)</p>
+                         <h3></h3>
 
-.whitespace {
-  color: #eee;
-}
-.cool-button {
-  background-color: #4CAF50; /* Green background on initial state */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.4s ease-in-out; /* Smooth color transition */
-}
-
-.cool-button:hover {
-  background-color: #3e8e41; /* Darker green on hover */
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); /* Shadow effect on hover */
-}
-
-  </style>
-</head>
-<body>
-  <p id="ray2">Symphony Hub</p>
-  <img id="icon"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/Screenshot_20231222-140010_1.png" alt="Symphony Hub Photo">
-  <a href="your-website-link.com"></a>
-  <div class="links-container">
-    <div class="link">
-    <p id="ray2">Games</p>
-    <img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/686589-6c7d7df5.png" alt="Games"></a>
-    <p>Symphony Hub only supports 2 Roblox Games such as Murder Mystery 2 and Blade Ball only.</p>
-    </div></div>
-  </div>
-  </div>
-  </p><p>
-  <title>Premium</title>
-  <div class="links-container">
-    <div class="link">
-        <p id="ray2">Common Perks</p>
-        <img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/role_manager.png" alt="Premium"></a>
-        <p>This will gives you Permanent Keyless and you will Unlocked the Premium Tab.</p></div>
-  </div>  <div class="links-container">
-    <div class="link">
-        <p id="ray2">Global Chat Perks</p>
-        <img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/589708-59e8a8b1.png" alt="Global Chat"></a>
-        <p>Symphony's Premium will gives you Premium Rank at Global Chat.</p>
-    </div>
-  </div>
-  <div class="links-container">
-    <div class="link">
-        <p id="ray2">Discord Perks</p>
-        <img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/discord_aestheticlogo.png" alt="Discord"></a>
-        <p>Get the Premium Role and 5x chance of winning in any giveaways.</p>
-    </div>
-  </div>
-  <p id="ray2">Buy</p>
-  There are only 1 way to buy Premium!
-  <div class="links-container">
-    <div class="link">
-        <p id="ray2">Robux</p>
-        <img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/old_robux.png" alt="Robux"></a>
-        <p>💸 75 Robux (R$)</p>
-        <a href="https://www.roblox.com/game-pass/22739804/Symphony-Hub-Premium"><button class="cool-button">Buy Premium!</button></a>
-    </div>
-  </div>
-  <p id="ray2">Links</p>
-  <div class="links-container">
-    <div class="link">
-    <p id="ray2">Officials</p>
-  <a href="https://discord.com/invite/qmKnDCxzKM"><img id="iconoff"src="https://raw.githubusercontent.com/ItsJiDy/SymphonyHub/main/resources/kisspng-discord-computer-icons-android-challenge-5ad920f517ddb6.2835550815241791890978.png" alt="Discord"></a>
-  <div class="contact-info">
-    <h3></h3>
-    <p>Developer: Elf and Tears (@elfandtears_ndk)</p>
-    <p>Discord Assistant: B3AR (@zixos_synto900)</p>
-    <h3></h3>
-    <p>Symphony Hub</p>
-    </div>
+                        <p>Symphony Hub</p>
+                </div>
     </body>
-<script>
-function tokenizeText(text) {
-  // Define regular expressions for Lua keywords, identifiers, numbers, strings, comments, and whitespace
-  const keywordRegex = /[\w_]+/g;
-  const identifierRegex = /[\w_]+/g;
-  const numberRegex = /[\d.]+/g;
-  const stringRegex = /"[^"]*"/g;
-  const commentRegex = /--.*\n|\/\/.*\n/g;
-  const whitespaceRegex = /\s+/g;
+    <script>
+        function tokenizeText(text) {
+          // Define regular expressions for Lua keywords, identifiers, numbers, strings, comments, and whitespace
+          const keywordRegex = /[\w_]+/g;
+          const identifierRegex = /[\w_]+/g;
+          const numberRegex = /[\d.]+/g;
+          const stringRegex = /"[^"]*"/g;
+          const commentRegex = /--.*\n|\/\/.*\n/g;
+          const whitespaceRegex = /\s+/g;
+        
+          // Split the text into tokens based on the regular expressions
+          const tokens = [];
+          let match;
+          while ((match = keywordRegex.exec(text)) || (match = identifierRegex.exec(text)) || (match = numberRegex.exec(text)) || (match = stringRegex.exec(text)) || (match = commentRegex.exec(text)) || (match = whitespaceRegex.exec(text))) {
+            tokens.push({
+              type: getTokenType(match[0]),
+              value: match[0],
+              index: match.index,
+              length: match[0].length
+            });
+            text = text.substring(match.index + match[0].length);
+          }
+        
+          // Add remaining whitespace tokens
+          if (text.length) {
+            tokens.push({
+              type: 'whitespace',
+              value: text,
+              index: text.length,
+              length: text.length
+            });
+          }
+        
+          return tokens;
+        }
+        function getCssClass(tokenType) {
+          switch (tokenType) {
+            case 'keyword':
+              return 'keyword';
+            case 'identifier':
+              return 'identifier';
+            case 'number':
+              return 'number';
+            case 'string':
+              return 'string';
+            case 'comment':
+              return 'comment';
+            case 'whitespace':
+              return 'whitespace';
+            default:
+              return '';
+          }
+        }
+        function highlightText(text) {
+          // Get the textarea element
+          const textarea = document.getElementById('myTextarea');
+        
+          // Tokenize the text
+          const tokens = tokenizeText(text);
+        
+          // Create a span element for each token
+          let highlightedText = '';
+          for (const token of tokens) {
+            highlightedText += `<span class="${getCssClass(token.type)}">${token.value}</span>`;
+          }
+        
+          // Replace the original text with the highlighted text
+          textarea.innerHTML = highlightedText;
+        }
+        const textarea = document.getElementById('myTextarea');
+        textarea.addEventListener('input', () => {
+          const text = textarea.value;
+          highlightText(text);
+        });
+    </script>
 
-  // Split the text into tokens based on the regular expressions
-  const tokens = [];
-  let match;
-  while ((match = keywordRegex.exec(text)) || (match = identifierRegex.exec(text)) || (match = numberRegex.exec(text)) || (match = stringRegex.exec(text)) || (match = commentRegex.exec(text)) || (match = whitespaceRegex.exec(text))) {
-    tokens.push({
-      type: getTokenType(match[0]),
-      value: match[0],
-      index: match.index,
-      length: match[0].length
-    });
-    text = text.substring(match.index + match[0].length);
-  }
-
-  // Add remaining whitespace tokens
-  if (text.length) {
-    tokens.push({
-      type: 'whitespace',
-      value: text,
-      index: text.length,
-      length: text.length
-    });
-  }
-
-  return tokens;
-}
-function getCssClass(tokenType) {
-  switch (tokenType) {
-    case 'keyword':
-      return 'keyword';
-    case 'identifier':
-      return 'identifier';
-    case 'number':
-      return 'number';
-    case 'string':
-      return 'string';
-    case 'comment':
-      return 'comment';
-    case 'whitespace':
-      return 'whitespace';
-    default:
-      return '';
-  }
-}
-function highlightText(text) {
-  // Get the textarea element
-  const textarea = document.getElementById('myTextarea');
-
-  // Tokenize the text
-  const tokens = tokenizeText(text);
-
-  // Create a span element for each token
-  let highlightedText = '';
-  for (const token of tokens) {
-    highlightedText += `<span class="${getCssClass(token.type)}">${token.value}</span>`;
-  }
-
-  // Replace the original text with the highlighted text
-  textarea.innerHTML = highlightedText;
-}
-const textarea = document.getElementById('myTextarea');
-textarea.addEventListener('input', () => {
-  const text = textarea.value;
-  highlightText(text);
-});
-
-</script>
 </html>
