@@ -1,1 +1,1 @@
-game:GetService("Players").LocalPlayer:Kick("Script is updating and cannot be use for now.")
+game:GetService("Players").LocalPlayer:Kick("Script is updating and cannot be use for now. | Join in the discord server for more info | https://discord.com/invite/symphonyhub")
